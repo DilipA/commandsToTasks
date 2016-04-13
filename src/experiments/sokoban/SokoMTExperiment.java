@@ -258,9 +258,9 @@ public class SokoMTExperiment {
 
 		WeaklySupervisedLanguageModel model = null;
 		switch(mtModel) {
-		case IBM_MODEL: model = new MTWeaklySupervisedModel(controller, tokenizer, 10); break;
-		case SCFG_MODEL: model = new SCFGMTWeaklySupervisedModel(controller, tokenizer, 10); break;
-			case DS_IBM_MODEL: model = new IBM2(null); break;
+			case IBM_MODEL: model = new MTWeaklySupervisedModel(controller, tokenizer, 10); break;
+			case SCFG_MODEL: model = new SCFGMTWeaklySupervisedModel(controller, tokenizer, 10); break;
+			case DS_IBM_MODEL: model = new IBM2(); break;
 		default : // IBM Model
 			model = new MTWeaklySupervisedModel(controller, tokenizer, 10);
 		}
