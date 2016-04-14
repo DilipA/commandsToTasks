@@ -95,7 +95,28 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
      */
     @Override
     public void learnFromDataset(List<WeaklySupervisedTrainingInstance> dataset) {
-        this.corpus = dataset.stream().map(this::convertWSI).collect(Collectors.toList());
+        this.corpus = new ArrayList<>(dataset.size());
+        Map<String, Parallel> instances = new HashMap<>(dataset.size());
+        for(WeaklySupervisedTrainingInstance wsi : dataset){
+            String naturalLanguage = wsi.command;
+            this.naturalVocabulary.addAll(Arrays.asList(naturalLanguage.split(" ")));
+            this.maxNaturalLength = Math.max(naturalLanguage.split(" ").length, this.maxNaturalLength);
+
+            // Get Machine Language Sentence, add words to vocabulary, update length
+            String machineLanguage = this.getMachineLanguageString(wsi.liftedTask, wsi.bindingConstraints);
+            this.machineVocabulary.addAll(Arrays.asList(machineLanguage.split(" ")));
+            this.maxMachineLength = Math.max(machineLanguage.split(" ").length, this.maxMachineLength);
+
+            Parallel instance = instances.get(naturalLanguage);
+            if(instance == null){
+                instance = new Parallel(naturalLanguage.split(" "));
+                instances.put(naturalLanguage, instance);
+                this.corpus.add(instance);
+            }
+
+            instance.addWeightedMachineCommand(machineLanguage, wsi.weight);
+        }
+
         this.initializeParameters();
         this.initializeCounts();
         this.runEM(15); // TODO FIX NUMBER OF ITERATIONS
@@ -147,10 +168,12 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
 
         for (Parallel sent: this.corpus) {
             int m = sent.natural.length;
-            int l = sent.machine.length;
+            for (int i = 0; i < sent.machines.size(); i++) {
+                int l = sent.machines.get(i).split(" ").length;
 
-            lmCount.add(new IntTupleHash(l, m), sent.weight);
-            lCount.add(l, sent.weight);
+                lmCount.add(new IntTupleHash(l, m), sent.weights.get(i));
+                lCount.add(l, sent.weights.get(i));
+            }
         }
 
         for (int l : lCount.keySet()) {
@@ -194,29 +217,31 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
         Parallel sent = this.corpus.get(index);
 
         String[] natural = sent.natural;
-        String[] machine = sent.machine;
-        double weight = sent.weight;
+        for(int k=0;k < sent.machines.size();k++) {
+            String[] machine = sent.machines.get(k).split(" ");
+            double weight = sent.weights.get(k);
 
-        int m = natural.length;
-        int l = machine.length;
+            int m = natural.length;
+            int l = machine.length;
 
-        for (int i = 1; i <= m; i++) {
-            for (int j = 0; j <= l; j++) {
-                double delta = this.point(natural, machine, i, j, m, l);
-                delta *= weight;
+            for (int i = 1; i <= m; i++) {
+                for (int j = 0; j <= l; j++) {
+                    double delta = this.point(natural, machine, i, j, m, l);
+                    delta *= weight;
 
-                String nWord = t(natural, i);
-                String sWord = t(machine, j);
+                    String nWord = t(natural, i);
+                    String sWord = t(machine, j);
 
-                if (Double.isNaN(delta)) {
-                    throw new RuntimeException("delta is NaN.");
+                    if (Double.isNaN(delta)) {
+                        throw new RuntimeException("delta is NaN.");
+                    }
+
+                    this.nTO.add(nWord + "<|>" + sWord, delta);
+                    this.nTW.add(sWord, delta);
+
+                    this.nDO.add(new IntTupleHash(j, i, l, m), delta);
+                    this.nDJILM.add(new IntTupleHash(i, l, m), delta);
                 }
-
-                this.nTO.add(nWord + "<|>" + sWord, delta);
-                this.nTW.add(sWord, delta);
-
-                this.nDO.add(new IntTupleHash(j, i, l, m), delta);
-                this.nDJILM.add(new IntTupleHash(i, l, m), delta);
             }
         }
     }
@@ -536,13 +561,23 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
 
     public class Parallel {
         public String[] natural;
-        public String[] machine;
-        public double weight;
+        public List<String> machines;
+        public List<Double> weights;
 
-        public Parallel(String[] natural, String[] machine, double weight) {
+//        public Parallel(String[] natural, String[] machine, double weight) {
+//            this.natural = natural;
+//            this.machine = machine;
+//            this.weight = weight;
+//        }
+        public Parallel(String[] natural) {
             this.natural = natural;
-            this.machine = machine;
-            this.weight = weight;
+            this.machines = new ArrayList<>();
+            this.weights = new ArrayList<>();
+        }
+
+        public void addWeightedMachineCommand(String machine, double weight){
+            this.machines.add(machine);
+            this.weights.add(weight);
         }
     }
 
@@ -596,7 +631,9 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
         // Get weight
         double weight = wsi.weight;
 
-        return new Parallel(naturalLanguage.split(" "), machineLanguage.split(" "), weight);
+//        return new Parallel(naturalLanguage.split(" "), machineLanguage.split(" "), weight);
+        return new Parallel(naturalLanguage.split(" "));
+
     }
 
 

@@ -121,8 +121,6 @@ public class MTWeaklySupervisedModel implements WeaklySupervisedLanguageModel{
 
 			String machineLanguage = this.getMachineLanguageString(wsi.liftedTask, wsi.bindingConstraints);
 			instance.addWeightedSemanticCommand(this.tokenizer.tokenize(machineLanguage), wsi.weight);
-
-
 		}
 
 		return mtDataset;
