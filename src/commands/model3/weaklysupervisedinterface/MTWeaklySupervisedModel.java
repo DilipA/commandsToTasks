@@ -54,9 +54,7 @@ public class MTWeaklySupervisedModel implements WeaklySupervisedLanguageModel{
 
 	@Override
 	public double probabilityOfCommand(LogicalExpression liftedTask, LogicalExpression bindingConstraints, String command) {
-		System.out.println(getMachineLanguageString(liftedTask, bindingConstraints));
-		System.out.println(command);
-		System.exit(0);
+
 		GenerativeModel gm = this.controller.getGM();
 		TaskModule.LiftedVarValue liftedTaskVal = new TaskModule.LiftedVarValue(gm.getRVarWithName(TaskModule.LIFTEDRFNAME), this.extractGPs(liftedTask));
 		TaskModule.LiftedVarValue bindingConstraintsVal = new TaskModule.LiftedVarValue(gm.getRVarWithName(TaskModule.BINDINGNAME), this.extractGPs(bindingConstraints));
@@ -89,12 +87,23 @@ public class MTWeaklySupervisedModel implements WeaklySupervisedLanguageModel{
 		MTModule langMod = new MTModule(LANGMODNAME, gm.getRVarWithName(TaskModule.LIFTEDRFNAME), gm.getRVarWithName(TaskModule.BINDINGNAME),
 				semanticWords, naturalWords, maxSemanticCommandLength, maxNaturalCommandLength, tokenizer);
 
-		gm.addGMModule(langMod);
+		gm.setGMModule(langMod);
 
 		this.naturalCommandVariable = gm.getRVarWithName(MTModule.NNAME);
 
 		MTEMModule mtem = new MTEMModule(mtDataset, gm);
 		mtem.runEMManually(this.numEMIterations);
+
+	}
+
+	public void loadModel(String path){
+		GenerativeModel gm = this.controller.getGM();
+
+		MTModule langMod = new MTModule(LANGMODNAME, gm.getRVarWithName(TaskModule.LIFTEDRFNAME), gm.getRVarWithName(TaskModule.BINDINGNAME),
+				tokenizer, path);
+
+		gm.addGMModule(langMod);
+		this.naturalCommandVariable = gm.getRVarWithName(MTModule.NNAME);
 
 	}
 
@@ -121,6 +130,8 @@ public class MTWeaklySupervisedModel implements WeaklySupervisedLanguageModel{
 
 			String machineLanguage = this.getMachineLanguageString(wsi.liftedTask, wsi.bindingConstraints);
 			instance.addWeightedSemanticCommand(this.tokenizer.tokenize(machineLanguage), wsi.weight);
+
+
 		}
 
 		return mtDataset;

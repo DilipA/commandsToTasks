@@ -2,11 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da86dc27-37c6-454d-9ce2-a32b42137fbd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/burlap1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commands/amdp/domain/Test.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/burlap.jar" afterPath="$PROJECT_DIR$/lib/burlap1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/behavior/planning/PolicyGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/behavior/planning/sokoamdp/SokoAMDP.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/behavior/planning/sokoamdp/SokoAMDPPlanner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/behavior/planning/sokoamdp/SokoAMDPPlannerPolicyGen.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/behavior/planning/sokoamdp/SokoAStarPlanner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/commands/online/OnlineTraining.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/burlap.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/burlap1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/commands/amdp/domain/Test.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/commands/scfgmodel/SCFGMTWeaklySupervisedModel.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/burlap1.jar" afterPath="$PROJECT_DIR$/lib/burlap.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commandsToTasks.iml" afterPath="$PROJECT_DIR$/commandsToTasks.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/behavior/irl/DGDIRLFactory.java" afterPath="$PROJECT_DIR$/src/behavior/irl/DGDIRLFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/behavior/irl/TabularIRL.java" afterPath="$PROJECT_DIR$/src/behavior/irl/TabularIRL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/behavior/irl/TabularIRLPlannerFactory.java" afterPath="$PROJECT_DIR$/src/behavior/irl/TabularIRLPlannerFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/behavior/planning/DeterministicGoalDirectedPartialVI.java" afterPath="$PROJECT_DIR$/src/behavior/planning/DeterministicGoalDirectedPartialVI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/behavior/planning/DynamicDVIPolicy.java" afterPath="$PROJECT_DIR$/src/behavior/planning/DynamicDVIPolicy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/TrajectoryRecorder.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/TrajectoryRecorder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/Soko2TRecorder.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/Soko2TRecorder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/SokoSimpleStateGen.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/SokoSimpleStateGen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/SokoTRecorder.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/SokoTRecorder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/soko2turkexamples/Soko2Turk1.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/soko2turkexamples/Soko2Turk1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk1.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk2.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk3.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk4.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk5.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk6.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/Turk6.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/TurkRoomLayout.java" afterPath="$PROJECT_DIR$/src/commands/auxiliarytools/sokoban/turkexamples/TurkRoomLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/data/TestElement.java" afterPath="$PROJECT_DIR$/src/commands/data/TestElement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/data/TestElementParser.java" afterPath="$PROJECT_DIR$/src/commands/data/TestElementParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/data/TrainToTestConverter.java" afterPath="$PROJECT_DIR$/src/commands/data/TrainToTestConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/data/TrainingElementParser.java" afterPath="$PROJECT_DIR$/src/commands/data/TrainingElementParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/data/Trajectory.java" afterPath="$PROJECT_DIR$/src/commands/data/Trajectory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/data/TrajectoryParser.java" afterPath="$PROJECT_DIR$/src/commands/data/TrajectoryParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/GPConjunction.java" afterPath="$PROJECT_DIR$/src/commands/model3/GPConjunction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/Model3Controller.java" afterPath="$PROJECT_DIR$/src/commands/model3/Model3Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/TaskModule.java" afterPath="$PROJECT_DIR$/src/commands/model3/TaskModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/TrajectoryModule.java" afterPath="$PROJECT_DIR$/src/commands/model3/TrajectoryModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/bagofwords/BagOfWordsEMModule.java" afterPath="$PROJECT_DIR$/src/commands/model3/bagofwords/BagOfWordsEMModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/mt/MTModule.java" afterPath="$PROJECT_DIR$/src/commands/model3/mt/MTModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/noisyor/NoisyOrEMModule.java" afterPath="$PROJECT_DIR$/src/commands/model3/noisyor/NoisyOrEMModule.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/MTWeaklySupervisedModel.java" afterPath="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/MTWeaklySupervisedModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/WeaklySupervisedController.java" afterPath="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/WeaklySupervisedController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/WeaklySupervisedTrainingInstance.java" afterPath="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/WeaklySupervisedTrainingInstance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/tests/Model3ControllerExpertData.java" afterPath="$PROJECT_DIR$/src/commands/tests/Model3ControllerExpertData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/tests/Model3ControllerTest.java" afterPath="$PROJECT_DIR$/src/commands/tests/Model3ControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/commands/tests/Model3Tests.java" afterPath="$PROJECT_DIR$/src/commands/tests/Model3Tests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban/SokobanDomain.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban/SokobanDomain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban/SokobanParser.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban/SokobanParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban/SokobanVisualizer.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban/SokobanVisualizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Domain.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Domain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Parser.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Visualizer.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Visualizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/SokobanOldToNewParser.java" afterPath="$PROJECT_DIR$/src/domain/singleagent/sokoban2/SokobanOldToNewParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java" afterPath="$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/experiments/sokoban/SokobanControllerConstructor.java" afterPath="$PROJECT_DIR$/src/experiments/sokoban/SokobanControllerConstructor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generativemodel/GenerativeModel.java" afterPath="$PROJECT_DIR$/src/generativemodel/GenerativeModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logicalexpressions/Conjunction.java" afterPath="$PROJECT_DIR$/src/logicalexpressions/Conjunction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logicalexpressions/Disjunction.java" afterPath="$PROJECT_DIR$/src/logicalexpressions/Disjunction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logicalexpressions/LogicalExpression.java" afterPath="$PROJECT_DIR$/src/logicalexpressions/LogicalExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logicalexpressions/Negation.java" afterPath="$PROJECT_DIR$/src/logicalexpressions/Negation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/logicalexpressions/PFAtom.java" afterPath="$PROJECT_DIR$/src/logicalexpressions/PFAtom.java" />
     </list>
     <ignored path="commandsToTasks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,34 +88,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Sokoban2Domain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Domain.java">
+      <file leaf-file-name="SokoMTExperiment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state vertical-scroll-proportion="11.111111">
+              <caret line="366" column="27" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TabularIRL.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/behavior/irl/TabularIRL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/commands/amdp/domain/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2055465">
-              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +137,6 @@
         <option value="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/WeaklySupervisedController.java" />
         <option value="$PROJECT_DIR$/src/commands/amdp/replicate/structures/ParallelCorpus.java" />
         <option value="$PROJECT_DIR$/src/commands/amdp/replicate/mt/IBMModel.java" />
-        <option value="$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java" />
         <option value="$PROJECT_DIR$/out/results1.txt" />
         <option value="$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/MTWeaklySupervisedModel.java" />
         <option value="$PROJECT_DIR$/src/commands/amdp/replicate/mt/IBM2.java" />
@@ -111,6 +150,12 @@
         <option value="$PROJECT_DIR$/src/commands/amdp/framework/AMDPSimpleAction.java" />
         <option value="$PROJECT_DIR$/src/commands/amdp/framework/AMDPAgent.java" />
         <option value="$PROJECT_DIR$/src/commands/amdp/domain/Test.java" />
+        <option value="$PROJECT_DIR$/src/commands/data/TestElement.java" />
+        <option value="$PROJECT_DIR$/src/commands/data/TestElementParser.java" />
+        <option value="$PROJECT_DIR$/src/behavior/irl/TabularIRL.java" />
+        <option value="$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Domain.java" />
+        <option value="$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment1.java" />
+        <option value="$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java" />
       </list>
     </option>
   </component>
@@ -201,6 +246,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="experiments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sokoban" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commandsToTasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commandsToTasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -267,59 +334,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commandsToTasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commandsToTasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amdp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commandsToTasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commandsToTasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="amdp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
+              <option name="myItemId" value="behavior" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,15 +385,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../commandsToTasks2/commandsToTasks" />
     <property name="recentsLimit" value="5" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="SearchEverywhereHistoryKey" value="IRL&#9;PSI&#9;JAVA://behavior.irl.TabularIRL" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.SokoMTExperiment">
     <configuration default="false" name="SokoMTExperiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -832,7 +849,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.49806523" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.49806523" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.50193477" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -840,7 +857,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25815368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498618" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1106,30 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/experiments/sokoban/SokobanControllerConstructor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14007781">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/MTWeaklySupervisedModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="43" selection-start-line="96" selection-start-column="43" selection-end-line="96" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/results2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9296875">
@@ -1141,14 +1134,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-27.476562">
           <caret line="262" column="28" selection-start-line="262" selection-start-column="28" selection-end-line="262" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/amdp/replicate/mt/IBM2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15392895">
-          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1168,16 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Domain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/model3/TrajectoryModule.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.1337683">
@@ -1186,19 +1161,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/behavior/irl/TabularIRL.java">
+    <entry file="file://$PROJECT_DIR$/src/commands/data/TestElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.12328767">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/amdp/domain/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/commands/data/TestElementParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7308319">
+          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/behavior/irl/TabularIRL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.3767123">
+          <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2356#2357#0" expanded="true" />
+            <element signature="e#2400#2401#0" expanded="true" />
+            <element signature="e#5615#5622#0" expanded="true" />
+            <element signature="e#7522#7523#0" expanded="true" />
+            <element signature="e#7559#7560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domain/singleagent/sokoban2/Sokoban2Domain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.288744">
+          <caret line="606" column="13" selection-start-line="606" selection-start-column="13" selection-end-line="606" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/experiments/sokoban/SokobanControllerConstructor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2055465">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/model3/weaklysupervisedinterface/MTWeaklySupervisedModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0766721">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/amdp/replicate/mt/IBM2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.181077">
+          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/experiments/sokoban/SokoMTExperiment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.111111">
+          <caret line="366" column="27" selection-start-line="366" selection-start-column="27" selection-end-line="366" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,7 +1287,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

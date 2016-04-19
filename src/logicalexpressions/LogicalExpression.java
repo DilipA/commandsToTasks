@@ -1,6 +1,8 @@
 package logicalexpressions;
 
-import burlap.oomdp.core.State;
+import burlap.oomdp.core.Domain;
+import burlap.oomdp.core.states.State;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,12 +29,12 @@ import java.util.Map;
  *
  * @author James MacGlashan.
  */
-public abstract class LogicalExpression {
+public abstract class LogicalExpression implements java.io.Serializable{
 
-	protected Map<String, String>			variablesAndTypes = new HashMap<String, String>();
-	protected LogicalExpression 			parentExpression = null;
-	protected List<LogicalExpression> 		childExpressions = new ArrayList<LogicalExpression>();
-	protected String						name; // For Debugging purposes
+	public Map<String, String>			variablesAndTypes = new HashMap<String, String>();
+	public LogicalExpression 			parentExpression = null;
+	public List<LogicalExpression> 		childExpressions = new ArrayList<LogicalExpression>();
+	public String						name; // For Debugging purposes
 
 
 	/**
@@ -42,8 +44,8 @@ public abstract class LogicalExpression {
 	public abstract LogicalExpression duplicate();
 
 	/**
-	 * Evaluates whether this logical expression is true in the given OO-MDP {@link burlap.oomdp.core.State}.
-	 * @param s that {@link burlap.oomdp.core.State} in which to evaluate this expression.
+	 * Evaluates whether this logical expression is true in the given OO-MDP {@link burlap.oomdp.core.states.State}.
+	 * @param s that {@link burlap.oomdp.core.states.State} in which to evaluate this expression.
 	 * @return true if this expression is true in s; false otherwise.
 	 */
 	public abstract boolean evaluateIn(State s);
@@ -187,6 +189,12 @@ public abstract class LogicalExpression {
 
 	}
 
+	//TODO: instatiatePFS recursively
+	public void instantiatedPropositionalFunctionsFromDomain(Domain domain){
+		for(LogicalExpression child : this.childExpressions){
+			child.instantiatedPropositionalFunctionsFromDomain(domain);
+		}
+	}
 
 
 

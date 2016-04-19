@@ -1,6 +1,8 @@
 package logicalexpressions;
 
-import burlap.oomdp.core.State;
+
+
+import burlap.oomdp.core.states.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.Map;
 /**
  * @author James MacGlashan.
  */
-public class Conjunction extends LogicalExpression{
+public class Conjunction extends LogicalExpression implements java.io.Serializable{
 
 	public Conjunction(LogicalExpression...expressions){
 		for(LogicalExpression exp : expressions){

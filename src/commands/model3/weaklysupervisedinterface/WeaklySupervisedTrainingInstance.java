@@ -1,11 +1,12 @@
 package commands.model3.weaklysupervisedinterface;
 
 import logicalexpressions.LogicalExpression;
+import sun.rmi.runtime.Log;
 
 /**
  * @author James MacGlashan.
  */
-public class WeaklySupervisedTrainingInstance {
+public class WeaklySupervisedTrainingInstance implements java.io.Serializable{
 	public LogicalExpression liftedTask;
 	public LogicalExpression bindingConstraints;
 	public String command;
