@@ -119,7 +119,7 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
 
         this.initializeParameters();
         this.initializeCounts();
-        this.runEM(15); // TODO FIX NUMBER OF ITERATIONS
+        this.runEM(10);
 
 //        ParallelCorpus datasetCorpus = new ParallelCorpus(alignedSents);
 //        this.corpus = datasetCorpus;
