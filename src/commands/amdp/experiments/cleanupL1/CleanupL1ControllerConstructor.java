@@ -48,6 +48,9 @@ public class CleanupL1ControllerConstructor {
         this.hashingFactory = new SimpleHashableStateFactory(false);
         this.liftedTaskDescriptions = new ArrayList<GPConjunction>(2);
 
+        //TODO: Need to add liftedTaskDescriptions here...
+        // in our case, the reward functions will only use the inRegion attributes of both/either agent and block
+
 
         this.sp = new CleanupL1Parser(this.domain);
         this.cacheStateParser = sp;
