@@ -25,13 +25,18 @@ public class CleanupRecorder {
         cw.includeWallPF_s(true);
         cw.includeLockableDoors(true);
         cw.setLockProbability(0.5);
-
         Domain domain = cw.generateDomain();
+
+        State cleanupInitial = CleanupWorld.getExperimentState(domain);
+
+//        SimulatedEnvironment simulatedEnvironment = new SimulatedEnvironment(domain, new NullRewardFunction(), new NullTermination(), cleanupInitial);
+//        EnvironmentShell environmentShell = new EnvironmentShell(domain, simulatedEnvironment, System.in, System.out);
+//        environmentShell.start();
+
         CleanupL1AMDPDomain cleanupWorldL1 = new CleanupL1AMDPDomain(domain);
         cleanupWorldL1.setLockableDoors(false);
         Domain domainL1 = cleanupWorldL1.generateDomain();
 
-        State cleanupInitial = CleanupWorld.getClassicState(domain);
 
         State l1Initial = CleanupL1AMDPDomain.projectToAMDPState(cleanupInitial, domainL1);
 

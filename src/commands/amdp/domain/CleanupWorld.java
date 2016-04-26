@@ -296,6 +296,25 @@ public class CleanupWorld implements DomainGenerator{
 
 	}
 
+	public static State getExperimentState(Domain domain){
+
+		State s = getCleanState(domain, 3, 2, 1);
+
+		setRoom(s, 0, 4, 0, 0, 8, "red");
+		setRoom(s, 1, 8, 0, 4, 4, "green");
+		setRoom(s, 2, 8, 4, 4, 8, "blue");
+
+		setDoor(s, 0, 4, 6, 4, 6);
+		setDoor(s, 1, 4, 2, 4, 2);
+
+		setAgent(s, 6, 6);
+		setBlock(s, 0, 2, 2, "bag", "yellow");
+
+
+		return s;
+
+	}
+
 
 	public static void setAgent(State s, int x, int y){
 		ObjectInstance o = s.getFirstObjectOfClass(CLASS_AGENT);
