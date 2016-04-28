@@ -46,10 +46,15 @@ public class CleanupL1ControllerConstructor {
         this.domainGenerator = cleanupWorldL1;
         this.domain = this.domainGenerator.generateDomain();
         this.hashingFactory = new SimpleHashableStateFactory(false);
-        this.liftedTaskDescriptions = new ArrayList<GPConjunction>(2);
+        this.liftedTaskDescriptions = new ArrayList<>(2);
 
-        //TODO: Need to add liftedTaskDescriptions here...
-        // in our case, the reward functions will only use the inRegion attributes of both/either agent and block
+        GPConjunction atr = new GPConjunction();
+        atr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_AGENT_IN_REGION), new String[]{"a", "r"}));
+        this.liftedTaskDescriptions.add(atr);
+
+        GPConjunction btr = new GPConjunction();
+        btr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_BLOCK_IN_REGION), new String[]{"b", "r"}));
+        this.liftedTaskDescriptions.add(btr);
 
 
         this.sp = new CleanupL1Parser(this.domain);
@@ -69,6 +74,8 @@ public class CleanupL1ControllerConstructor {
     }
 
 
+    //TODO: Once dataset is compiled, fill with right answers!
+    //This is how we get the right "answer" - the RF produced by the model is compared to the string here
     public Map<String, String> getExpertDatasetRFLabels(){
         Map<String, String> labels = new HashMap<String, String>();
 
@@ -81,20 +88,6 @@ public class CleanupL1ControllerConstructor {
         addLabelMappingForRange(labels, "blockToBottom_", "txt", 1, 21, "blockInRoom(block0, room0)");
         addLabelMappingForRange(labels, "agent2LNblock2R_", "txt", 1, 21, "agentInRoom(agent0, room1) blockInRoom(block0, room2)");
         addLabelMappingForRange(labels, "agent2RNblock2L_", "txt", 1, 21, "agentInRoom(agent0, room2) blockInRoom(block0, room1)");
-
-
-        return labels;
-    }
-
-    public Map<String, String> getTurkDatasetRFLabels(){
-        Map<String, String> labels = new HashMap<String, String>();
-
-        addLabelMappingForRange(labels, "agent2orange_", "txt", 0, 40, "agentInRoom(agent0, room1)");
-        addLabelMappingForRange(labels, "agent2tan_", "txt", 0, 40, "agentInRoom(agent0, room0)");
-        addLabelMappingForRange(labels, "agent2teal_", "txt", 0, 40, "agentInRoom(agent0, room2)");
-        addLabelMappingForRange(labels, "star2orange_", "txt", 0, 40, "blockInRoom(block0, room1)");
-        addLabelMappingForRange(labels, "star2tan_", "txt", 0, 40, "blockInRoom(block0, room0)");
-        addLabelMappingForRange(labels, "star2teal_", "txt", 0, 40, "blockInRoom(block0, room2)");
 
 
         return labels;
