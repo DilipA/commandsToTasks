@@ -282,12 +282,12 @@ public class SokobanDomain implements DomainGenerator, StateParser {
 
 		//assign keys for command line interface
 		if(tLocation != -1){
-			TerminalExplorer exp = new TerminalExplorer(domain, st);
-			exp.addActionShortHand("n", ACTIONNORTH);
-			exp.addActionShortHand("s", ACTIONSOUTH);
-			exp.addActionShortHand("e", ACTIONEAST);
-			exp.addActionShortHand("w", ACTIONWEST);
-			exp.explore();
+//			TerminalExplorer exp = new TerminalExplorer(domain, st);
+//			exp.addActionShortHand("n", ACTIONNORTH);
+//			exp.addActionShortHand("s", ACTIONSOUTH);
+//			exp.addActionShortHand("e", ACTIONEAST);
+//			exp.addActionShortHand("w", ACTIONWEST);
+//			exp.explore();
 		}	
 		//read trajectory from file
 		else if(cLocation != -1){
