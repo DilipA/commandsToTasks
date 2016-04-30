@@ -1,0 +1,2 @@
+walk to door, go into red room
+walk to door, go into red room, move block to blue door, move block into blue room

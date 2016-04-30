@@ -6,8 +6,6 @@ import burlap.oomdp.core.states.State;
 import burlap.oomdp.legacy.StateParser;
 import commands.amdp.domain.CleanupL1AMDPDomain;
 import commands.amdp.domain.CleanupWorld;
-import domain.singleagent.sokoban2.Sokoban2Domain;
-
 import java.util.List;
 import java.util.Set;
 
