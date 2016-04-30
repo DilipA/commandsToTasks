@@ -47,6 +47,11 @@ public class CleanupL1ControllerConstructor implements ControllerConstructor{
         btr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_BLOCK_IN_REGION), new String[]{"b", "r"}));
         this.liftedTaskDescriptions.add(btr);
 
+        GPConjunction abtr = new GPConjunction();
+        abtr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_AGENT_IN_REGION), new String[]{"a", "r1"}));
+        abtr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_BLOCK_IN_REGION), new String[]{"b", "r2"}));
+        this.liftedTaskDescriptions.add(abtr);
+
 
         this.sp = new CleanupL1Parser(this.domain);
         this.cacheStateParser = sp;
