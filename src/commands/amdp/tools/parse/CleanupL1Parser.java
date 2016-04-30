@@ -1,4 +1,4 @@
-package commands.amdp.tools;
+package commands.amdp.tools.parse;
 
 import burlap.oomdp.core.Domain;
 import burlap.oomdp.core.objects.ObjectInstance;

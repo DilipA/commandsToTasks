@@ -9,14 +9,13 @@ import burlap.oomdp.statehashing.SimpleHashableStateFactory;
 import commands.amdp.domain.CleanupL1AMDPDomain;
 import commands.amdp.domain.CleanupWorld;
 import commands.amdp.experiments.ControllerConstructor;
-import commands.amdp.tools.CleanupL1Parser;
+import commands.amdp.tools.parse.CleanupL1Parser;
 import commands.data.TrainingElement;
 import commands.data.TrainingElementParser;
 import commands.model3.GPConjunction;
 import commands.model3.weaklysupervisedinterface.WeaklySupervisedController;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

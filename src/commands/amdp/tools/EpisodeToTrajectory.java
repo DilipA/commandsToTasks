@@ -4,7 +4,7 @@ import burlap.behavior.singleagent.EpisodeAnalysis;
 import burlap.oomdp.core.Domain;
 import commands.amdp.domain.CleanupL1AMDPDomain;
 import commands.amdp.domain.CleanupWorld;
-import commands.amdp.tools.CleanupL1Parser;
+import commands.amdp.tools.parse.CleanupL1Parser;
 import commands.data.Trajectory;
 import commands.data.TrajectoryParser;
 
