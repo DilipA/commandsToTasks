@@ -1,4 +1,4 @@
-package commands.auxiliarytools.amdp;
+package commands.amdp.tools;
 
 import burlap.domain.singleagent.gridworld.GridWorldDomain;
 import burlap.oomdp.auxiliary.common.NullTermination;

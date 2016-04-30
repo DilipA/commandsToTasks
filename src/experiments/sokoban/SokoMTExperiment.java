@@ -281,68 +281,6 @@ public class SokoMTExperiment {
 			createAndAddLanguageModel(controller);
 
 			//load our IRL trajectory cache for fast IRL
-			//TODO: Run once and save IRL probabilities, then uncomment this line to load from cache
-//			controller.loadIRLProbabiltiesFromDisk(pathToIRLCache, constructor.cacheStateParser);
-
-			//instantiate the weakly supervised language model dataset using IRL
-			controller.createWeaklySupervisedTrainingDatasetFromTrajectoryDataset(trainingDataset);
-
-			//save IRL trajectory cache to disk
-			//TODO: Run once and save IRL probabilities, then comment this line since we can just load from cache
-			controller.cacheIRLProbabilitiesToDisk(pathToIRLCache, constructor.cacheStateParser);
-
-			//perform learning
-			controller.trainLanguageModel();
-
-			//test it
-			GenerativeModel gm = controller.getGM();
-			TrainingElement queryElement = dataset.get(i);
-			String rfLabel = rfLabels.get(queryElement.identifier);
-			List<GMQueryResult> rfDist = controller.getRFDistribution(queryElement.trajectory.getState(0), queryElement.command);
-			GMQueryResult predicted = GMQueryResult.maxProb(rfDist);
-
-			TaskModule.RFConVariableValue gr = (TaskModule.RFConVariableValue)predicted.getQueryForVariable(gm.getRVarWithName(TaskModule.GROUNDEDRFNAME));
-			String grs = gr.toString().trim();
-			if(grs.equals(rfLabel)){
-				nc++;
-				System.out.println("Correct: " + queryElement.identifier);
-			}
-			else{
-				System.out.println("Incorrect: " + queryElement.identifier);
-			}
-
-			System.out.println("Current accuracy: " + (double) nc / (double) (i+1));
-		}
-
-		double accuracy = (double)nc/(double)dataset.size();
-		System.out.println(nc + "/" + dataset.size() + "; " + accuracy);
-
-	}
-
-	public static void LOOL1Test(String pathToDataset, String pathToIRLCache){
-
-		//sokoban training task definition
-		CleanupL1ControllerConstructor constructor = new CleanupL1ControllerConstructor();
-		Map<String,String> rfLabels = constructor.getExpertDatasetRFLabels();
-
-		//get source training data
-		List<TrainingElement> dataset = constructor.getTrainingDataset(pathToDataset);
-
-
-		//start LOO loop
-		int nc = 0;
-		for(int i = 0; i < dataset.size(); i++){
-
-			List<TrainingElement> trainingDataset = new ArrayList<TrainingElement>(dataset);
-			trainingDataset.remove(i);
-
-			//get our controller
-			WeaklySupervisedController controller = constructor.generateNewController();
-
-			//instantiate our MT language model
-			createAndAddLanguageModel(controller);
-
-			//load our IRL trajectory cache for fast IRL
 			controller.loadIRLProbabiltiesFromDisk(pathToIRLCache, constructor.cacheStateParser);
 
 			//instantiate the weakly supervised language model dataset using IRL
@@ -373,6 +311,7 @@ public class SokoMTExperiment {
 
 		double accuracy = (double)nc/(double)dataset.size();
 		System.out.println(nc + "/" + dataset.size() + "; " + accuracy);
+
 	}
 
 

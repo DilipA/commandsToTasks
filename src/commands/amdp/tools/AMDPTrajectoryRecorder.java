@@ -1,4 +1,4 @@
-package commands.auxiliarytools.amdp;
+package commands.amdp.tools;
 
 import burlap.oomdp.auxiliary.StateGenerator;
 import burlap.oomdp.core.Domain;
