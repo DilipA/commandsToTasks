@@ -43,7 +43,7 @@ public class EpisodeToTrajectory {
             String naturalCommand = builder.toString();
             EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(pathName, domainL1); // TODO
             Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
-            TrajectoryParser tp = new TrajectoryParser(domainL1, )
+            TrajectoryParser tp = new TrajectoryParser(domainL1, new CleanupL1Parser(domainL1));
         }
     }
 

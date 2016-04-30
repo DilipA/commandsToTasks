@@ -13,6 +13,7 @@ import burlap.oomdp.core.objects.MutableObjectInstance;
 import burlap.oomdp.core.objects.ObjectInstance;
 import burlap.oomdp.core.states.MutableState;
 import burlap.oomdp.core.states.State;
+import burlap.oomdp.core.values.Value;
 import burlap.oomdp.singleagent.FullActionModel;
 import burlap.oomdp.singleagent.GroundedAction;
 import burlap.oomdp.singleagent.RewardFunction;
@@ -39,6 +40,9 @@ public class CleanupL1AMDPDomain implements DomainGenerator {
 
 	public static final String ACTION_BLOCK_TO_DOOR = "blockToDoor";
 	public static final String ACTION_BLOCK_TO_ROOM = "blockToRoom";
+
+	public static final String	PF_AGENT_IN_REGION = "agentInRegion";
+	public static final String	PF_BLOCK_IN_REGION = "blockInRegion";
 
 
 	protected boolean lockableDoors = false;
@@ -107,7 +111,10 @@ public class CleanupL1AMDPDomain implements DomainGenerator {
 		
 		StateMapping sm = new StateMapperL1(domain);
 		((FullyObservableSingleAgentAMDPDomain)domain).setStateMapper(sm);
-		
+
+		new PF_InRegion(PF_AGENT_IN_REGION, domain, new String[]{CleanupWorld.CLASS_AGENT, CleanupWorld.CLASS_ROOM});
+		new PF_InRegion(PF_BLOCK_IN_REGION, domain, new String[]{CleanupWorld.CLASS_BLOCK, CleanupWorld.CLASS_ROOM});
+
 		return domain;
 	}
 
@@ -225,6 +232,27 @@ public class CleanupL1AMDPDomain implements DomainGenerator {
 
 
 		return as;
+
+	}
+
+	public class PF_InRegion extends PropositionalFunction {
+
+		protected boolean countBoundary;
+
+		public PF_InRegion(String name, Domain domain, String [] params){
+			super(name, domain, params);
+		}
+
+		@Override
+		public boolean isTrue(State s, String[] params) {
+
+			ObjectInstance o = s.getObject(params[0]);
+			ObjectInstance currRegion = s.getObject(o.getStringValForAttribute(ATT_IN_REGION));
+
+			ObjectInstance region = s.getObject(params[1]);
+			return currRegion.valueEquals(region);
+
+		}
 
 	}
 
