@@ -16,6 +16,7 @@ import commands.model3.GPConjunction;
 import commands.model3.weaklysupervisedinterface.WeaklySupervisedController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -95,25 +96,23 @@ public class CleanupL1ControllerConstructor implements ControllerConstructor{
         return this.cacheStateParser;
     }
 
-
-    //TODO: Once dataset is compiled, fill with right answers!
     //This is how we get the right "answer" - the RF produced by the model is compared to the string here
     @Override
     public Map<String, String> getExpertDatasetRFLabels(){
-        throw new UnsupportedOperationException();
-//
-//        Map<String, String> labels = new HashMap<String, String>();
-//
-//        ControllerConstructor.addLabelMappingForRange(labels, "block1ToRight_", "txt", 1, 21, "blockInRoom(block1, room2)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "block1ToBottom_", "txt", 1, 21, "blockInRoom(block1, room0)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "agentToLeft_", "txt", 1, 21, "agentInRoom(agent0, room1)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "agentToBottom_", "txt", 1, 21, "agentInRoom(agent0, room0)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "blockToLeft_", "txt", 1, 21, "blockInRoom(block0, room1)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "blockToRight_", "txt", 1, 21, "blockInRoom(block0, room2)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "blockToBottom_", "txt", 1, 21, "blockInRoom(block0, room0)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "agent2LNblock2R_", "txt", 1, 21, "agentInRoom(agent0, room1) blockInRoom(block0, room2)");
-//        ControllerConstructor.addLabelMappingForRange(labels, "agent2RNblock2L_", "txt", 1, 21, "agentInRoom(agent0, room2) blockInRoom(block0, room1)");
-//
-//        return labels;
+
+        Map<String, String> labels = new HashMap<>();
+
+        labels.put("go|to|red|door|go|into|red|room.txt", "agentInRegion(agent0, room0)");
+        labels.put("go|to|red|door|go|into|red|room|go|to|green|door.txt", "agentInRegion(agent0, door1)");
+        labels.put("go|to|red|door|go|into|red|room|go|to|green|door|go|into|green|room.txt", "agentInRegion(agent0, room1)");
+        labels.put("go|to|red|door|go|into|red|room|move|bag|to|green|door|go|to|red|door.txt", "agentInRegion(agent0, door0)");
+        labels.put("go|to|red|door|go|into|red|room|move|bag|to|green|door|move|to|green|door|move|bag|to|green|room.txt", "blockInRegion(block0, room1)");
+        labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door.txt", "blockInRegion(block0, door0)");
+        labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door|go|to|red|door.txt", "agentInRegion(agent0, door0) blockInRegion(block0, door0)");
+        labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door|move|to|red|door|move|bag|to|red|room.txt", "blockInRegion(block0, room0)");
+        labels.put("go|to|red|door|go|to|blue|room.txt", "agentInRegion(agent0, room2)");
+        labels.put("go|to|red|door|go|to|red|room|move|bag|to|green|door.txt", "blockInRegion(block0, door1)");
+
+        return labels;
     }
 }

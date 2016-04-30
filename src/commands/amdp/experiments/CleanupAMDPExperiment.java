@@ -106,19 +106,19 @@ public class CleanupAMDPExperiment {
         boolean cacheIRLResults = true;
 //        boolean cacheIRLResults = false;
 
-        CleanupL0ControllerConstructor l0Controller = new CleanupL0ControllerConstructor();
-//        CleanupL1ControllerConstructor l1Controller = new CleanupL1ControllerConstructor();
+//        CleanupL0ControllerConstructor l0Controller = new CleanupL0ControllerConstructor();
+        CleanupL1ControllerConstructor l1Controller = new CleanupL1ControllerConstructor();
 //        CleanupL2ControllerConstructor l2Controller = new CleanupL2ControllerConstructor();
 
 
         if(cacheIRLResults) {
-            cacheIRLResultsFor(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
-//            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
+//            cacheIRLResultsFor(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
+            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
 //            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
         }
 
-        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
-//        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
+//        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
+        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
 //        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
     }
 }
