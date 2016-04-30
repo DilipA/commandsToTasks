@@ -16,6 +16,7 @@ import commands.model3.GPConjunction;
 import commands.model3.weaklysupervisedinterface.WeaklySupervisedController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -75,11 +76,6 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
     }
 
     @Override
-    public Map<String, String> getExpertDatasetRFLabels() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public StateParser getSP() {
         return this.sp;
     }
@@ -87,5 +83,14 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
     @Override
     public StateParser getCacheStateParser() {
         return this.cacheStateParser;
+    }
+
+    @Override
+    public Map<String, String> getExpertDatasetRFLabels() {
+        Map<String, String> labels = new HashMap<>();
+
+        //
+
+        return labels;
     }
 }

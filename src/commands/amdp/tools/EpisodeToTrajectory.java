@@ -3,8 +3,11 @@ package commands.amdp.tools;
 import burlap.behavior.singleagent.EpisodeAnalysis;
 import burlap.oomdp.core.Domain;
 import commands.amdp.domain.CleanupL1AMDPDomain;
+import commands.amdp.domain.CleanupL2AMDPDomain;
 import commands.amdp.domain.CleanupWorld;
+import commands.amdp.tools.parse.CleanupL0Parser;
 import commands.amdp.tools.parse.CleanupL1Parser;
+import commands.amdp.tools.parse.CleanupL2Parser;
 import commands.data.Trajectory;
 import commands.data.TrajectoryParser;
 
@@ -34,6 +37,9 @@ public class EpisodeToTrajectory {
         cleanupWorldL1.setLockableDoors(false);
         Domain domainL1 = cleanupWorldL1.generateDomain();
 
+        CleanupL2AMDPDomain cleanupWorldL2 = new CleanupL2AMDPDomain();
+        Domain domainL2 = cleanupWorldL2.generateDomain();
+
         for (File f: episodes) {
             String pathName = f.getName();
             String[] splitPath = pathName.split("\\|");
@@ -49,9 +55,9 @@ public class EpisodeToTrajectory {
                 }
             }
             String naturalCommand = builder.toString();
-            EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domainL1);
+            EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domainL2);
             Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
-            TrajectoryParser tp = new TrajectoryParser(domainL1, new CleanupL1Parser(domainL1));
+            TrajectoryParser tp = new TrajectoryParser(domainL2, new CleanupL2Parser(domainL2));
 
             String trajectoryRep = tp.getStringRepForTrajectory(trajectory);
 
@@ -68,8 +74,8 @@ public class EpisodeToTrajectory {
     }
 
     public static void main(String[] args) {
-        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1/ea";
-        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1" +
+        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L2/ea";
+        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L2" +
                 "/trajectory";
 
         File dir = new File(episodeDirectory);
