@@ -33,7 +33,7 @@ public class CleanupRecorder {
         cw.includeDirectionAttribute(true);
         cw.includePullAction(true);
         cw.includeWallPF_s(true);
-        cw.includeLockableDoors(true);
+        cw.includeLockableDoors(false);
         cw.setLockProbability(0.5);
         Domain domain = cw.generateDomain();
 

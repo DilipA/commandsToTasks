@@ -1,10 +1,10 @@
-move four steps forward, four steps left
-move one step down, four steps right
-move one step up
-move two steps up, one step, one step left
-go one step right, four steps down, then two steps up
-move two steps left
-move three steps right, four steps up
-move two steps down, four steps right
-move three steps up, one step down
-move two steps up, two steps down
+move four steps south, four steps west
+move one step south, one step east
+move one step north
+move one step north, one step west
+go one step east, one step south, then two steps north
+move one step west
+move three steps south, one step east
+move three steps south, one step west
+move three steps south, one step north
+move one step north, two steps south
