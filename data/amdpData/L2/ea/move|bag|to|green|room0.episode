@@ -1,0 +1,52 @@
+!!burlap.behavior.singleagent.EpisodeAnalysis
+actionSequence: [!action 'blockToRoom block0 room1']
+rewardSequence: [0.0]
+stateSequence:
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: room2}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: color, value: blue}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: room0}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: ''}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: color, value: blue}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: room1}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}

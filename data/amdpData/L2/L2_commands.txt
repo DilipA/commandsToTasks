@@ -1,10 +1,10 @@
-move bag to the blue room then go to the red room
+move bag to the green room then go to the red room
 move bag to the green room then go to the green room
-push bag to green room and then move to blue room
-take backpack to blue room and then walk to red room
-carry purse to green room and go to green room
-go to green room
-walk to red room
-move purse to green room
+move bag to green room and then go to the blue room
+move bag to blue room and then go to the red room
+move bag to blue room and then go to the green room
+go to the green room
+go to the red room
+move bag to green room
 move bag to blue room
-carry backpack to green room
+move bag to green room, then move bag to blue room
