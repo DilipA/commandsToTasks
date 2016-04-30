@@ -95,7 +95,7 @@ public class CleanupL1Parser implements StateParser {
             String[] splitobject = objects[i].split(",");
             if (splitobject[0].equals("room")) {
                 ObjectInstance room = new MutableObjectInstance(this.domain.getObjectClass(CleanupWorld.CLASS_ROOM), CleanupWorld.CLASS_ROOM + rooms);
-                room.setValue(CleanupWorld.ATT_COLOR, Integer.parseInt(splitobject[1]));
+                room.setValue(CleanupWorld.ATT_COLOR, CleanupWorld.COLORS[Integer.parseInt(splitobject[1])]);
                 for (int j = 2; j < splitobject.length; j++) {
                     room.addRelationalTarget(CleanupL1AMDPDomain.ATT_CONNECTED, splitobject[j]);
                 }
@@ -110,8 +110,8 @@ public class CleanupL1Parser implements StateParser {
                 doors++;
             } else if (splitobject[0].equals("block")) {
                 ObjectInstance block = new MutableObjectInstance(this.domain.getObjectClass(CleanupWorld.CLASS_BLOCK), CleanupWorld.CLASS_BLOCK + blocks);
-                block.setValue(CleanupWorld.ATT_COLOR, Integer.parseInt(splitobject[1]));
-                block.setValue(CleanupWorld.ATT_SHAPE, Integer.parseInt(splitobject[2]));
+                block.setValue(CleanupWorld.ATT_COLOR, CleanupWorld.COLORS[Integer.parseInt(splitobject[1])]);
+                block.setValue(CleanupWorld.ATT_SHAPE, CleanupWorld.SHAPES[Integer.parseInt(splitobject[2])]);
                 for (int j = 3; j < splitobject.length; j++) {
                     block.addRelationalTarget(CleanupL1AMDPDomain.ATT_IN_REGION, splitobject[j]);
                 }
@@ -150,9 +150,10 @@ public class CleanupL1Parser implements StateParser {
         CleanupL1Parser parser = new CleanupL1Parser(domainL1);
         String parsed = parser.stateToString(l1Initial);
         System.out.println(parsed);
-        System.out.println("\n");
         State parsedBack = parser.stringToState(parsed);
-        System.out.println(l1Initial.equals(parsedBack));
         System.out.println(parser.stateToString(parsedBack));
+        System.out.println("\n");
+        System.out.println(l1Initial.equals(parsedBack));
+        System.out.println(parsed.equals(parser.stateToString(parsedBack)));
     }
 }
