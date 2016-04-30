@@ -21,6 +21,7 @@ import commands.amdp.domain.CleanupWorld;
  *  "rec -w (path) (fileName)" Writes all recorded episodes to the indicated directory path with file name
  *      "fileName_i.episode" where i refers to the ith episode
  *  "cmds" Lists all commands
+ *  "ex (action) (*args)" Executes the indicated action with the specified arguments
  *
  * Created by Sidd Karamcheti on 4/21/16.
  */
