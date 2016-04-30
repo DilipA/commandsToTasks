@@ -39,9 +39,9 @@ public class CleanupRecorder {
 
         State cleanupInitial = CleanupWorld.getExperimentState(domain);
 
-        SimulatedEnvironment simulatedEnvironment = new SimulatedEnvironment(domain, new NullRewardFunction(), new NullTermination(), cleanupInitial);
-        EnvironmentShell environmentShell = new EnvironmentShell(domain, simulatedEnvironment, System.in, System.out);
-        environmentShell.start();
+//        SimulatedEnvironment simulatedEnvironment = new SimulatedEnvironment(domain, new NullRewardFunction(), new NullTermination(), cleanupInitial);
+//        EnvironmentShell environmentShell = new EnvironmentShell(domain, simulatedEnvironment, System.in, System.out);
+//        environmentShell.start();
 
         CleanupL1AMDPDomain cleanupWorldL1 = new CleanupL1AMDPDomain(domain);
         cleanupWorldL1.setLockableDoors(false);
@@ -50,9 +50,9 @@ public class CleanupRecorder {
 
         State l1Initial = CleanupL1AMDPDomain.projectToAMDPState(cleanupInitial, domainL1);
 
-//        SimulatedEnvironment simulatedEnvironment = new SimulatedEnvironment(domainL1, new NullRewardFunction(), new NullTermination(), l1Initial);
-//        EnvironmentShell environmentShell = new EnvironmentShell(domainL1, simulatedEnvironment, System.in, System.out);
-//        environmentShell.start();
+        SimulatedEnvironment simulatedEnvironment = new SimulatedEnvironment(domainL1, new NullRewardFunction(), new NullTermination(), l1Initial);
+        EnvironmentShell environmentShell = new EnvironmentShell(domainL1, simulatedEnvironment, System.in, System.out);
+        environmentShell.start();
 
         CleanupL2AMDPDomain cleanupWorldL2 = new CleanupL2AMDPDomain();
         Domain domainL2 = cleanupWorldL2.generateDomain();

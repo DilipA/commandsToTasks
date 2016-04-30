@@ -1,2 +1,10 @@
-walk to door, go into red room
-walk to door, go into red room, move block to blue door, move block into blue room
+go to red door, go into red room
+go to red door, go into red room, move bag to red door
+go to red door, go into red room, go to green door
+go to red door, go to blue room
+go to red door, go to red room, move bag to green door
+go to red door, go into red room, go to green door, go into green room
+go to red door, go into red room, move bag to green door, go to red door
+go to red door, go into red room, move bag to red door, go to red door
+go to red door, go into red room, move bag to green door, move to green door, move bag to green room
+go to red door, go into red room, move bag to red door, move to red door, move bag to red room

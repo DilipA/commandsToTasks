@@ -1,0 +1,180 @@
+!!burlap.behavior.singleagent.EpisodeAnalysis
+actionSequence: [!action 'agentToDoor door0', !action 'agentToRoom room0', !action 'blockToDoor
+    block0 door1', !action 'agentToDoor door0']
+rewardSequence: [0.0, 0.0, 0.0, 0.0]
+stateSequence:
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: room2}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0;door1}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door1}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room2}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room1}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: room0}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: door0}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0;door1}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door1}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room2}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room1}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: room0}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: room0}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0;door1}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door1}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room2}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room1}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: room0}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: room0}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0;door1}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door1}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room2}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room1}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: door1}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: agent
+    object_class: agent
+    values:
+    - {attribute: inRegion, value: door0}
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0;door1}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door1}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: connectedObjects, value: door0}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room2}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: connectedObjects, value: room0;room1}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: inRegion, value: door1}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
