@@ -34,7 +34,7 @@ public class CleanupRecorder {
         cw.includePullAction(false);
         cw.includeWallPF_s(true);
         cw.includeLockableDoors(false);
-        cw.setLockProbability(0.5);
+        cw.setLockProbability(0.0);
         Domain domain = cw.generateDomain();
 
         State cleanupInitial = CleanupWorld.getExperimentState(domain);

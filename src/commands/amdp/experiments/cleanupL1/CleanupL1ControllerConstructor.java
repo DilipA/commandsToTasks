@@ -61,7 +61,7 @@ public class CleanupL1ControllerConstructor implements ControllerConstructor{
     public DomainGenerator buildDomainGenerator(){
         CleanupWorld cw = new CleanupWorld();
         cw.includeDirectionAttribute(true);
-        cw.includePullAction(true);
+        cw.includePullAction(false);
         cw.includeWallPF_s(true);
         cw.includeLockableDoors(false);
         cw.setLockProbability(0.0);
