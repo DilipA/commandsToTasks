@@ -16,7 +16,9 @@ import burlap.oomdp.singleagent.common.GoalBasedRF;
 import burlap.oomdp.singleagent.explorer.TerminalExplorer;
 import commands.amdp.framework.FullyObservableSingleAgentAMDPDomain;
 import commands.amdp.framework.ObjectParameterizedAMDPAction;
+import commands.amdp.tools.parse.CleanupL2Parser;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -118,8 +120,6 @@ public class CleanupL2AMDPDomain implements DomainGenerator {
 
 	public class PF_InRegion extends PropositionalFunction {
 
-		protected boolean countBoundary;
-
 		public PF_InRegion(String name, Domain domain, String [] params){
 			super(name, domain, params);
 		}
@@ -127,10 +127,15 @@ public class CleanupL2AMDPDomain implements DomainGenerator {
 		@Override
 		public boolean isTrue(State s, String[] params) {
 
+//            System.out.println(Arrays.toString(params));
+            CleanupL2Parser parser = new CleanupL2Parser(this.domain);
+//            System.out.println(parser.stateToString(s));
 			ObjectInstance o = s.getObject(params[0]);
 			ObjectInstance currRegion = s.getObject(o.getStringValForAttribute(CleanupL1AMDPDomain.ATT_IN_REGION));
 
 			ObjectInstance region = s.getObject(params[1]);
+//            System.out.println(currRegion == null);
+//            System.out.println(region == null);
 			return currRegion.valueEquals(region);
 		}
 
@@ -222,6 +227,10 @@ public class CleanupL2AMDPDomain implements DomainGenerator {
 			ObjectInstance agent = s.getFirstObjectOfClass(CleanupWorld.CLASS_AGENT);
 			ObjectInstance block = s.getObject(oga.params[0]);
 			agent.clearRelationalTargets(CleanupL1AMDPDomain.ATT_IN_REGION);
+            Set<String> conn = block.getAllRelationalTargets(CleanupL1AMDPDomain.ATT_IN_REGION);
+            for(String r : conn){
+                agent.addRelationalTarget(CleanupL1AMDPDomain.ATT_IN_REGION, r);
+            }
 			block.addRelationalTarget(CleanupL1AMDPDomain.ATT_IN_REGION, oga.params[1]);
 
 			return s;

@@ -26,7 +26,6 @@ public class CleanupAMDPExperiment {
 
     public static void createAndAddLanguageModel(WeaklySupervisedController controller){
         IBM2 model = new IBM2();
-        System.out.println("Finished loading MT model...");
         //set our controller to use the MT model we created
         controller.setLanguageModel(model);
     }
@@ -57,6 +56,7 @@ public class CleanupAMDPExperiment {
 
         //start LOO loop
         int nc = 0;
+        System.out.println("Starting LOO cross validation test on " + dataset.size() + " samples");
         for(int i = 0; i < dataset.size(); i++){
 
             List<TrainingElement> trainingDataset = new ArrayList<TrainingElement>(dataset);
@@ -107,18 +107,18 @@ public class CleanupAMDPExperiment {
 //        boolean cacheIRLResults = false;
 
 //        CleanupL0ControllerConstructor l0Controller = new CleanupL0ControllerConstructor();
-        CleanupL1ControllerConstructor l1Controller = new CleanupL1ControllerConstructor();
-//        CleanupL2ControllerConstructor l2Controller = new CleanupL2ControllerConstructor();
+//        CleanupL1ControllerConstructor l1Controller = new CleanupL1ControllerConstructor();
+        CleanupL2ControllerConstructor l2Controller = new CleanupL2ControllerConstructor();
 
 
         if(cacheIRLResults) {
 //            cacheIRLResultsFor(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
-            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
-//            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
+//            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
+            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
         }
 
 //        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
-        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
-//        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
+//        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
+        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
     }
 }
