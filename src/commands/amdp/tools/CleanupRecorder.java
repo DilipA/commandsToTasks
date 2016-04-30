@@ -1,4 +1,4 @@
-package commands.auxiliarytools.amdp;
+package commands.amdp.tools;
 
 import burlap.oomdp.auxiliary.common.NullTermination;
 import burlap.oomdp.core.Domain;
@@ -31,10 +31,10 @@ public class CleanupRecorder {
 
         CleanupWorld cw = new CleanupWorld();
         cw.includeDirectionAttribute(true);
-        cw.includePullAction(true);
+        cw.includePullAction(false);
         cw.includeWallPF_s(true);
         cw.includeLockableDoors(false);
-        cw.setLockProbability(0.5);
+        cw.setLockProbability(0.0);
         Domain domain = cw.generateDomain();
 
         State cleanupInitial = CleanupWorld.getExperimentState(domain);
