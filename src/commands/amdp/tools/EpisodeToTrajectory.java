@@ -8,7 +8,8 @@ import commands.amdp.tools.parse.CleanupL1Parser;
 import commands.data.Trajectory;
 import commands.data.TrajectoryParser;
 
-import java.io.File;
+import java.io.*;
+import java.util.Arrays;
 
 /**
  * EpisodeToTrajectory.java
@@ -35,22 +36,41 @@ public class EpisodeToTrajectory {
 
         for (File f: episodes) {
             String pathName = f.getName();
-            String[] splitPath = pathName.split("|");
+            String[] splitPath = pathName.split("\\|");
             StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < splitPath.length - 1; i++) {
-                builder.append(splitPath[i]);
-                builder.append(" ");
+            for (int i = 0; i < splitPath.length; i++) {
+                if (i == splitPath.length - 1) {
+                    String toAppend = splitPath[i].substring(0, splitPath[i].length() - 9);
+                    builder.append(toAppend);
+                    builder.append(" ");
+                } else {
+                    builder.append(splitPath[i]);
+                    builder.append(" ");
+                }
             }
             String naturalCommand = builder.toString();
-            EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(pathName, domainL1); // TODO
+            EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domainL1);
             Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
             TrajectoryParser tp = new TrajectoryParser(domainL1, new CleanupL1Parser(domainL1));
+
+            String trajectoryRep = tp.getStringRepForTrajectory(trajectory);
+
+            pathName = pathName.substring(0, pathName.length() - 9);
+            String fileName = outputDir + "/" + pathName + ".txt";
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileName)))) {
+                bw.write(naturalCommand);
+                bw.write("\n");
+                bw.write(trajectoryRep);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public static void main(String[] args) {
-        String episodeDirectory = ""; // TODO
-        String outputDirectory = ""; // TODO
+        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1/ea";
+        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1" +
+                "/trajectory";
 
         File dir = new File(episodeDirectory);
         File[] episodes = dir.listFiles();
