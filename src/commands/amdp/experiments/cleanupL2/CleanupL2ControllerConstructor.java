@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by Dilip Arumugam on 4/30/16.
  */
 public class CleanupL2ControllerConstructor implements ControllerConstructor {
-    public static final String EXPERTDATASET = "data/amdpData/L2";
+    public static final String EXPERTDATASET = "data/amdpData/L2/trajectory";
 
     public DomainGenerator domainGenerator;
     public Domain domain;
