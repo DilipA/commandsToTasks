@@ -13,6 +13,15 @@ import commands.amdp.domain.CleanupWorld;
 /**
  * CleanupRecorder.java
  *
+ * When run:
+ *  "obs" Prints out the current state
+ *  "lsa" Lists all available actions in the current state
+ *  "rec -b -a" Starts episode recording and automatically starts recording the next episode when the environment is reset
+ *  "reset" Resets the current environment
+ *  "rec -w (path) (fileName)" Writes all recorded episodes to the indicated directory path with file name
+ *      "fileName_i.episode" where i refers to the ith episode
+ *  "cmds" Lists all commands
+ *
  * Created by Sidd Karamcheti on 4/21/16.
  */
 public class CleanupRecorder {
