@@ -1,4 +1,4 @@
-0.0
+1.0747962653340158E-81
 agentInRegion(agent0, room0) blockInRegion(block0, room2) 
 agentToDoor,agentToRoom,blockToDoor,agentToDoor,blockToRoom
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room2

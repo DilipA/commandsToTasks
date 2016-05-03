@@ -171,10 +171,13 @@ public class TabularIRL {
 			State s = t.getState(i);
 			GroundedAction ga = t.getAction(i);
 			double actionP = ((Policy)policy).getProbOfAction(s, ga);
+			if(actionP == 0.0){
+				continue;
+			}
 			logsum += Math.log(actionP);
 			
 		}
-		
+
 		return logsum;
 	}
 	

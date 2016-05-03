@@ -85,7 +85,7 @@ public class TrajectoryModule extends GMModule{
 			
 			
 			p = irl.getBehaviorProbability(bval.t.convertToZeroRewardEpisodeAnalysis(), tc);
-			
+
 			if(this.useIRLCache){
 				this.cachedResults.put(query, p);
 			}
