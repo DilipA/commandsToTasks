@@ -25,6 +25,10 @@ import java.util.Map;
 public class CleanupL0ControllerConstructor implements ControllerConstructor {
     public static final String EXPERTDATASET = "data/amdpData/L0/trajectory";
 
+    public static final String L1CROSSDATASET = "data/amdpData/L1L0/trajectory";
+
+    public static final String L2CROSSDATASET = "data/amdpData/L2L0/trajectory";
+
     public DomainGenerator domainGenerator;
     public Domain domain;
     public HashableStateFactory hashingFactory;
