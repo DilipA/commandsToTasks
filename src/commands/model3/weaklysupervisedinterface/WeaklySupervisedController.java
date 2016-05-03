@@ -410,7 +410,7 @@ public class WeaklySupervisedController {
 				grConds.add(sval);
 				grConds.add(lrRes.getSingleQueryVar());
 				grConds.add(grRes.getSingleQueryVar());
-				System.out.println("IRL on " + grRes.getSingleQueryVar().toString());
+//				System.out.println("IRL on " + grRes.getSingleQueryVar().toString());
 
 				//compute probability of trajectory
 				GMQuery trajQuery = new GMQuery();

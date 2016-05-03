@@ -237,8 +237,6 @@ public class CleanupL1AMDPDomain implements DomainGenerator {
 
 	public class PF_InRegion extends PropositionalFunction {
 
-		protected boolean countBoundary;
-
 		public PF_InRegion(String name, Domain domain, String [] params){
 			super(name, domain, params);
 		}
