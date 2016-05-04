@@ -172,6 +172,7 @@ public class TabularIRL {
 			GroundedAction ga = t.getAction(i);
 			double actionP = ((Policy)policy).getProbOfAction(s, ga);
 //			Policy.ActionProb temp = ((Policy) policy).getActionDistributionForState(s).stream().filter(ap -> ap.ga.toString().equals(ga.toString())).findFirst().get();
+//			System.out.println(ga.toString());
 //			System.out.println(actionP);
 			logsum += Math.log(actionP);
 			

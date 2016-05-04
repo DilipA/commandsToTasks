@@ -106,8 +106,8 @@ public class CleanupAMDPExperiment {
 
     public static void main(String[] args) {
 
-        boolean cacheIRLResults = true;
-//        boolean cacheIRLResults = false;
+//        boolean cacheIRLResults = true;
+        boolean cacheIRLResults = false;
 
         CleanupL0ControllerConstructor l0Controller = new CleanupL0ControllerConstructor();
         CleanupL1ControllerConstructor l1Controller = new CleanupL1ControllerConstructor();
@@ -115,14 +115,14 @@ public class CleanupAMDPExperiment {
 
 
         if(cacheIRLResults) {
-            cacheIRLResultsFor(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
-            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
-            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
+//            cacheIRLResultsFor(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
+//            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
+//            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
         }
 
-        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
+//        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
 //        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
-//        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
+        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
 
 //        LOOTest(l1Controller, l1Controller.L0CROSSDATASET, L1_TRAJ_CACHE);
 //        LOOTest(l2Controller, l2Controller.L0CROSSDATASET, L2_TRAJ_CACHE);
