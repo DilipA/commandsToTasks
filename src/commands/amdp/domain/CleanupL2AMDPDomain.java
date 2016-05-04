@@ -134,9 +134,12 @@ public class CleanupL2AMDPDomain implements DomainGenerator {
 			ObjectInstance currRegion = s.getObject(o.getStringValForAttribute(CleanupL1AMDPDomain.ATT_IN_REGION));
 
 			ObjectInstance region = s.getObject(params[1]);
-//            System.out.println(currRegion == null);
-//            System.out.println(region == null);
-			return currRegion.valueEquals(region);
+            if(currRegion == null){
+				return false;
+			}
+			else{
+				return currRegion.valueEquals(region);
+			}
 		}
 
 	}

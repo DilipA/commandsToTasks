@@ -1,0 +1,5 @@
+1.8933398639386852E-88
+agentInRegion(agent0, room1) 
+blockToRoom block0 room1
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room1 agent,

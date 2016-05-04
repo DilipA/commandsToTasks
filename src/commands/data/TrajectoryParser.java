@@ -1,6 +1,7 @@
 package commands.data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -42,9 +43,10 @@ public class TrajectoryParser {
 				params[j-1] = aparams[j].trim();
 			}
 			Action action = d.getAction(aname);
-			GroundedAction ga = new SimpleGroundedAction(action);
+//			GroundedAction ga = new SimpleGroundedAction(action);
+            GroundedAction ga = action.getGroundedAction(params);
 			actions.add(ga);
-		}
+        }
 		
 		//then get states
 		for(int i = 1; i < dcomps.length; i++){
@@ -69,10 +71,16 @@ public class TrajectoryParser {
 			GroundedAction ga = t.getAction(i);
 			buf.append(ga.toString());
 //			buf.append(ga.action.getName());
-//			for(int j = 0; j < ga.params.length; j++){
-//				buf.append(" ").append(ga.params[j]);
-//			}
+//			String[] params = ga.getParametersAsString();
+//            if(params.length > 0) {
+//                for (int j = 0; j < params.length; j++){
+//                    buf.append(" ").append(params[j]);
+//                }
+//            }
 		}
+//
+//        System.out.println(buf.toString());
+//        System.exit(0);
 		
 		buf.append("\n");
 		
