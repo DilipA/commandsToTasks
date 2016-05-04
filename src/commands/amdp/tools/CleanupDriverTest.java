@@ -41,7 +41,7 @@ public class CleanupDriverTest {
 
             State s = CleanupWorld.getExperimentState(domain);
 
-            GroundedProp groundedProp = new GroundedProp(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_ROOM),  new String[]{"block0", "room0"});
+            GroundedProp groundedProp = new GroundedProp(domain.getPropFunction(CleanupWorld.PF_AGENT_IN_ROOM),  new String[]{"agent0", "room0"});
 
 
             StateConditionTest sc = new CleanupL1AMDPDomain.GroundedPropSC(groundedProp);
@@ -69,6 +69,8 @@ public class CleanupDriverTest {
 
             System.out.println(ea.stateSequence);
             System.out.println(ea.actionSequence);
+            String prefix = "data/amdpData/L1L0/ea/";
+            ea.writeToFile(prefix + "go|to|red|door|go|into|red|room");
 
             //		System.out.println(ea.getState(0).toString());
             System.out.println("total actions:" + ea.actionSequence.size());
