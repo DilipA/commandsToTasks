@@ -1,6 +1,6 @@
-1.6366236088789787E-82
-agentInRegion(agent0, room1) blockInRegion(block0, room2) 
-agentToDoor,agentToRoom,blockToDoor,agentToDoor,blockToRoom
+3.823316529929464E-87
+agentInRegion(agent0, room0) blockInRegion(block0, room2) 
+agentToDoor door0,agentToRoom room0,blockToDoor block0 door0,agentToDoor door0,blockToRoom block0 room0
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room2
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,door0
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room0

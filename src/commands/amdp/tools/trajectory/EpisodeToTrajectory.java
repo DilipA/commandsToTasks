@@ -1,4 +1,4 @@
-package commands.amdp.tools;
+package commands.amdp.tools.trajectory;
 
 import burlap.behavior.singleagent.EpisodeAnalysis;
 import burlap.oomdp.core.Domain;

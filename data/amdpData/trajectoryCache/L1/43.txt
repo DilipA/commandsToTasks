@@ -1,8 +1,7 @@
-1.0030649850588276E-86
+0.09443248960370101
 agentInRegion(agent0, room0) 
-agentToDoor,agentToRoom,blockToDoor,agentToDoor
+agentToDoor door0,agentToRoom room0,blockToDoor block0 door1
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room2
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,door0
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room0
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,door1 agent,room0
-room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,door1 agent,door0

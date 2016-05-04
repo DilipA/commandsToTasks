@@ -1,5 +1,5 @@
-0.839354159739309
+3.1767329086818026E-87
 agentInRegion(agent0, room1) 
-agentToRoom
+agentToRoom room0
 room,3 room,1 room,0 block,4,1,room0 agent,room2
-room,3 room,1 room,0 block,4,1,room0 agent,room1
+room,3 room,1 room,0 block,4,1,room0 agent,room0
