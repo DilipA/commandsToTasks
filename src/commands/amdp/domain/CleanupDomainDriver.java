@@ -311,6 +311,9 @@ public class CleanupDomainDriver {
 		else if(PFName.equals(CleanupWorld.PF_BLOCK_IN_DOOR)){
 			return new BlockToRegionHeuristic(params[0], params[1], discount, lockProb);
 		}
+		else if(PFName.equals(CleanupWorld.PF_BLOCK_IN_DOOR + " " + CleanupWorld.PF_AGENT_IN_DOOR)){
+			return new JointHeuristic(new BlockToRegionHeuristic(params[0], params[1], discount, lockProb), new AgentToRegionHeuristic(params[1], discount, lockProb));
+		}
 		throw new RuntimeException("Unknown Reward Function with propositional function " + PFName + ". Cannot construct l0 heuristic.");
 	}
 
@@ -438,6 +441,27 @@ public class CleanupDomainDriver {
 			double v = freeRegion ? fullChanceV : lockProb * fullChanceV + (1. - lockProb)*0.;
 
 			return v;
+		}
+	}
+
+	public static class JointHeuristic implements ValueFunctionInitialization{
+
+		protected final ValueFunctionInitialization h1;
+		protected final ValueFunctionInitialization h2;
+
+		public JointHeuristic(ValueFunctionInitialization h1, ValueFunctionInitialization h2){
+			this.h1 = h1;
+			this.h2 = h2;
+		}
+
+		@Override
+		public double qValue(State state, AbstractGroundedAction abstractGroundedAction) {
+			return h1.value(state) + h2.value(state);
+		}
+
+		@Override
+		public double value(State state) {
+			return h1.value(state) + h2.value(state);
 		}
 	}
 

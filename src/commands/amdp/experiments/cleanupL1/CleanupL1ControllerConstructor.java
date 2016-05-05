@@ -112,7 +112,7 @@ public class CleanupL1ControllerConstructor implements ControllerConstructor{
         labels.put("go|to|red|door|go|into|red|room|move|bag|to|green|door|go|to|red|door.txt", "agentInRegion(agent0, door0)");
         labels.put("go|to|red|door|go|into|red|room|move|bag|to|green|door|move|to|green|door|move|bag|to|green|room.txt", "blockInRegion(block0, room1)");
         labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door.txt", "blockInRegion(block0, door0)");
-        labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door|go|to|red|door.txt", "agentInRegion(agent0, door0) blockInRegion(block0, door0)");
+        labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door|go|to|green|door.txt", "agentInRegion(agent0, door0) blockInRegion(block0, door0)");
         labels.put("go|to|red|door|go|into|red|room|move|bag|to|red|door|move|to|red|door|move|bag|to|red|room.txt", "blockInRegion(block0, room0)");
         labels.put("go|to|red|door|go|to|blue|room.txt", "agentInRegion(agent0, room2)");
         labels.put("go|to|red|door|go|to|red|room|move|bag|to|green|door.txt", "blockInRegion(block0, door1)");
