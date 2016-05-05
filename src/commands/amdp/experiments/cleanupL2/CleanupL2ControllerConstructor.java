@@ -89,26 +89,26 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
         return this.cacheStateParser;
     }
 
-    @Override
-    public Map<String, String> getExpertDatasetRFLabels() {
-        Map<String, String> labels = new HashMap<>();
-
-        labels.put("go|to|the|green|room.txt", "agentInRegion(agent0, room1)");
-        labels.put("go|to|the|red|room.txt", "agentInRegion(agent0, room0)");
-        labels.put("move|bag|to|blue|room.txt", "blockInRegion(block0, room2)");
-        labels.put("move|bag|to|blue|room|and|then|go|to|the|green|room.txt", "agentInRegion" +
-                        "(agent0, room1) blockInRegion(block0, room2)");
-        labels.put("move|bag|to|blue|room|and|then|go|to|the|red|room.txt", "agentInRegion" +
-                        "(agent0, room0) blockInRegion(block0, room2)");
-        labels.put("move|bag|to|green|room.txt", "blockInRegion(block0, room1)");
-        labels.put("move|bag|to|green|room|and|then|go|to|the|blue|room.txt", "agentInRegion" +
-                "(agent0, room2) blockInRegion(block0, room1)");
-        labels.put("move|bag|to|green|room|then|move|bag|to|blue|room.txt", "blockInRegion" +
-                "(block0, room2)");
-        labels.put("move|bag|to|the|green|room|then|go|to|the|green|room.txt", "agentInRegion" +
-                "(agent0, room1) blockInRegion(block0, room1)");
-        labels.put("move|bag|to|the|green|room|then|go|to|the|red|room.txt", "agentInRegion" +
-                "(agent0, room0) blockInRegion(block0, room1)");
-        return labels;
-    }
+//    @Override
+//    public Map<String, String> getExpertDatasetRFLabels() {
+//        Map<String, String> labels = new HashMap<>();
+//
+//        labels.put("go|to|the|green|room.txt", "agentInRegion(agent0, room1)");
+//        labels.put("go|to|the|red|room.txt", "agentInRegion(agent0, room0)");
+//        labels.put("move|bag|to|blue|room.txt", "blockInRegion(block0, room2)");
+//        labels.put("move|bag|to|blue|room|and|then|go|to|the|green|room.txt", "agentInRegion" +
+//                        "(agent0, room1) blockInRegion(block0, room2)");
+//        labels.put("move|bag|to|blue|room|and|then|go|to|the|red|room.txt", "agentInRegion" +
+//                        "(agent0, room0) blockInRegion(block0, room2)");
+//        labels.put("move|bag|to|green|room.txt", "blockInRegion(block0, room1)");
+//        labels.put("move|bag|to|green|room|and|then|go|to|the|blue|room.txt", "agentInRegion" +
+//                "(agent0, room2) blockInRegion(block0, room1)");
+//        labels.put("move|bag|to|green|room|then|move|bag|to|blue|room.txt", "blockInRegion" +
+//                "(block0, room2)");
+//        labels.put("move|bag|to|the|green|room|then|go|to|the|green|room.txt", "agentInRegion" +
+//                "(agent0, room1) blockInRegion(block0, room1)");
+//        labels.put("move|bag|to|the|green|room|then|go|to|the|red|room.txt", "agentInRegion" +
+//                "(agent0, room0) blockInRegion(block0, room1)");
+//        return labels;
+//    }
 }

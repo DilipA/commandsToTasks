@@ -84,24 +84,24 @@ public class CleanupL0ControllerConstructor implements ControllerConstructor {
         return dataset;
     }
 
-    @Override
-    public Map<String, String> getExpertDatasetRFLabels() {
-
-        Map<String, String> labels = new HashMap<>();
-
-        labels.put("move|four|steps|south|four|steps|west.txt", "agentInRoom(agent0, room0)");
-        labels.put("move|one|step|east|one|step|south|then|two|steps|north.txt", "agentInRoom(agent0, room2)");
-        labels.put("move|one|step|north.txt", "agentInRoom(agent0, room2)");
-        labels.put("move|one|step|north|one|step|west.txt", "agentInRoom(agent0, room2)");
-        labels.put("move|one|step|north|two|steps|south.txt", "agentInRoom(agent0, room2)");
-        labels.put("move|one|step|south|one|step|east.txt", "agentInRoom(agent0, room2)");
-        labels.put("move|one|step|west.txt", "agentInRoom(agent0, room2)");
-        labels.put("move|three|steps|south|one|step|east.txt", "agentInRoom(agent0, room0)");
-        labels.put("move|three|steps|south|one|step|north.txt", "agentInRoom(agent0, room0)");
-        labels.put("move|three|steps|south|one|step|west.txt", "agentInRoom(agent0, room0)");
-
-        return labels;
-    }
+//    @Override
+//    public Map<String, String> getExpertDatasetRFLabels() {
+//
+//        Map<String, String> labels = new HashMap<>();
+//
+//        labels.put("move|four|steps|south|four|steps|west.txt", "agentInRoom(agent0, room0)");
+//        labels.put("move|one|step|east|one|step|south|then|two|steps|north.txt", "agentInRoom(agent0, room2)");
+//        labels.put("move|one|step|north.txt", "agentInRoom(agent0, room2)");
+//        labels.put("move|one|step|north|one|step|west.txt", "agentInRoom(agent0, room2)");
+//        labels.put("move|one|step|north|two|steps|south.txt", "agentInRoom(agent0, room2)");
+//        labels.put("move|one|step|south|one|step|east.txt", "agentInRoom(agent0, room2)");
+//        labels.put("move|one|step|west.txt", "agentInRoom(agent0, room2)");
+//        labels.put("move|three|steps|south|one|step|east.txt", "agentInRoom(agent0, room0)");
+//        labels.put("move|three|steps|south|one|step|north.txt", "agentInRoom(agent0, room0)");
+//        labels.put("move|three|steps|south|one|step|west.txt", "agentInRoom(agent0, room0)");
+//
+//        return labels;
+//    }
 
     @Override
     public StateParser getSP() {

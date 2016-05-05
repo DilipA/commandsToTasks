@@ -1,7 +1,4 @@
 go to red door go into red room move bag to red door go to red door 
 agentToRoom room0
 room,3 room,1 room,0 block,4,1,room0 agent,room2
-room,3 room,1 room,0 block,4,1,room0 agent,
 room,3 room,1 room,0 block,4,1,room0 agent,room0
-room,3 room,1 room,0 block,4,1, agent,room0
-room,3 room,1 room,0 block,4,1, agent,
