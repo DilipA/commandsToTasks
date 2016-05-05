@@ -93,7 +93,7 @@ We show that grounding an arbitrary natural language command to a reward functio
 
 We build our own AMDP over this domain, with each level corresponding to a different level of abstraction. There are three levels: \textbf{low}, \textbf{mid}, and \textbf{high}. The low-level MDP corresponds to simple directional commands, like telling the agent to move north, south, east, and west. The mid-level MDP corresponds to commands referencing the agent, the block, the doors in each of the domain's three rooms, and the rooms themselves. Finally, the high-level MDP abstracts away doors, so that these commands only reference agents, blocks, and rooms.
 
-To test the effectiveness of using AMDPs, we collect datasets for each level, with each dataset consisting of a list of natural language commands and their respective demonstrations. The following are some examples of natural language commands at each level of the AMDP:
+To test the effectiveness of using AMDPs, we collect datasets for each level, with each dataset consisting of a list of natural language commands that match the given level's abstraction and their respective demonstrations. The following are some examples of natural language commands at each level of the AMDP:
 
 \begin{description}
 \item[\textbf{Low:}] Go three steps south, then two steps east.
@@ -101,17 +101,30 @@ To test the effectiveness of using AMDPs, we collect datasets for each level, wi
 \item[\textbf{High:}] Go to the green room.
 \end{description}
 
-Our experiment consists of training IBM II Translation Models between every permutation of the levels of the AMDP. More precisely, we train a model to translate a natural language command to a machine language reward function for each level of the AMDP. We then
+Our experiment consists of training IBM II Translation Models between every permutation of the levels of the AMDP. More precisely, we train a model to translate a natural language command to a machine language reward function for each level of the AMDP. We then evaluate the models by passing in a natural language command of a given level into each of the three models. In this ``swap'', we show that we get the best results for a given level of the AMDP with the corresponding natural language command, rather than any others. We use Leave-One-Out (LOO) accuracy as the evaluation metric.
+
 \subsection{Results}
 
-Lorem ipsum
+The following table shows our LOO results for each swap. The rows are labeled with the level of the Natural Language (NLP) command, while the Columns designate the level of the MDP to which the language is grounded (the level-specific IBM II Translation system.)
 
-\section{Conclusion}
+\begin{table}[h!]
+\centering
+\caption{LOO Accuracy for each Swap}
+\label{my-label}
+\begin{tabular}{l|l|l|l|}
+\cline{2-4}
+                                  & MDP Level 0 & MDP Level 1 & MDP Level 2 \\ \hline
+\multicolumn{1}{|l|}{NLP Level 0} & 0.0 \%      & 0.0\%       & 0.0\%       \\ \hline
+\multicolumn{1}{|l|}{NLP Level 1} & 0.0\%       & 0.0\%       & 0.0\%       \\ \hline
+\multicolumn{1}{|l|}{NLP Level 2} & 0.0\%       & 0.0\%       & 0.0\%       \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Conclusion and Future Work}
 \label{sec:conclusion}
 
 Lorem ipsum
 
-\section*{Acknowledgments}
 
 %% Use plainnat to work nicely with natbib.
 
