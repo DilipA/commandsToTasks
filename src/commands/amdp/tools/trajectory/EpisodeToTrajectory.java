@@ -109,8 +109,8 @@ public class EpisodeToTrajectory {
     }
 
     public static void main(String[] args) {
-        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1L0/ea";
-        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1L0" +
+        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L2L0/ea";
+        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L2L0" +
                 "/trajectory";
 
         File dir = new File(episodeDirectory);
