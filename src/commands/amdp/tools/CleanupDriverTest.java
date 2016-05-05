@@ -40,8 +40,8 @@ public class CleanupDriverTest {
 
         List<PropositionalFunction> pfs = new ArrayList<>();
 
-        pfs.add(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_DOOR));
-        pfs.add(domain.getPropFunction(CleanupWorld.PF_AGENT_IN_DOOR));
+        pfs.add(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_ROOM));
+        pfs.add(domain.getPropFunction(CleanupWorld.PF_AGENT_IN_ROOM));
 
         StringBuilder sb = new StringBuilder();
         pfs.stream().map(PropositionalFunction::getName).forEach(n -> sb.append(n).append(" "));
@@ -51,17 +51,18 @@ public class CleanupDriverTest {
         String[] parameterClasses = paramClasses.toArray(new String[paramClasses.size()]);
 
 
-//        GroundedProp groundedProp = new GroundedProp(new JointPF(name, domain, parameterClasses, pfs), new String[]{"block0", "door0", "agent0", "door1"});
+        GroundedProp groundedProp = new GroundedProp(new JointPF(name, domain, parameterClasses, pfs), new String[]{"block0", "room1", "agent0", "room0"});
 
 
-        GroundedProp groundedProp = new GroundedProp(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_DOOR),  new String[]{"block0", "door1"});
+//        GroundedProp groundedProp = new GroundedProp(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_ROOM),  new String[]{"block0", "room2"});
 
 
-        StateConditionTest sc = new CleanupL1AMDPDomain.GroundedPropSC(groundedProp);
+//        StateConditionTest sc = new CleanupL1AMDPDomain.GroundedPropSC(groundedProp);
+        StateConditionTest sc = new CleanupL2AMDPDomain.GroundedPropSC(groundedProp);
         RewardFunction heuristicRF = new PullCostGoalRF(sc, 1., 0.);
 
 
-        CleanupL1AMDPDomain.GroundedPropSC l0sc = new CleanupL1AMDPDomain.GroundedPropSC(groundedProp);
+        CleanupL2AMDPDomain.GroundedPropSC l0sc = new CleanupL2AMDPDomain.GroundedPropSC(groundedProp);
         GoalBasedRF l0rf = new GoalBasedRF(l0sc, 1., 0.);
         GoalConditionTF l0tf = new GoalConditionTF(l0sc);
 
@@ -82,8 +83,8 @@ public class CleanupDriverTest {
 
         System.out.println(ea.stateSequence);
         System.out.println(ea.actionSequence);
-        String prefix = "data/amdpData/L1L0/ea/";
-        ea.writeToFile(prefix + "go|to|red|door|go|to|red|room|move|bag|to|green|door" + "0");
+        String prefix = "data/amdpData/L2L0/ea/";
+        ea.writeToFile(prefix + "move|bag|to|the|green|room|then|go|to|the|red|room" + "0");
 
         //		System.out.println(ea.getState(0).toString());
         System.out.println("total actions:" + ea.actionSequence.size());

@@ -295,8 +295,8 @@ public class CleanupDomainDriver {
 	public static ValueFunctionInitialization getL0Heuristic(State s, RewardFunction rf){
 
 		double discount = 0.99;
-		// prop name if block -> block and room if 
-		CleanupL1AMDPDomain.GroundedPropSC rfCondition = (CleanupL1AMDPDomain.GroundedPropSC)((PullCostGoalRF)rf).getGoalCondition();
+		// prop name if block -> block and room if
+		CleanupL2AMDPDomain.GroundedPropSC rfCondition = (CleanupL2AMDPDomain.GroundedPropSC)((PullCostGoalRF)rf).getGoalCondition();
 		String PFName = rfCondition.gp.pf.getName();
 		String[] params = rfCondition.gp.params;
 		if(PFName.equals(CleanupWorld.PF_AGENT_IN_ROOM)){
@@ -312,7 +312,10 @@ public class CleanupDomainDriver {
 			return new BlockToRegionHeuristic(params[0], params[1], discount, lockProb);
 		}
 		else if(PFName.equals(CleanupWorld.PF_BLOCK_IN_DOOR + " " + CleanupWorld.PF_AGENT_IN_DOOR)){
-			return new JointHeuristic(new BlockToRegionHeuristic(params[0], params[1], discount, lockProb), new AgentToRegionHeuristic(params[1], discount, lockProb));
+			return new JointHeuristic(new BlockToRegionHeuristic(params[0], params[1], discount, lockProb), new AgentToRegionHeuristic(params[3], discount, lockProb));
+		}
+		else if(PFName.equals(CleanupWorld.PF_BLOCK_IN_ROOM + " " + CleanupWorld.PF_AGENT_IN_ROOM)){
+			return new JointHeuristic(new BlockToRegionHeuristic(params[0], params[1], discount, lockProb), new AgentToRegionHeuristic(params[3], discount, lockProb));
 		}
 		throw new RuntimeException("Unknown Reward Function with propositional function " + PFName + ". Cannot construct l0 heuristic.");
 	}

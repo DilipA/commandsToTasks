@@ -1,0 +1,1053 @@
+!!burlap.behavior.singleagent.EpisodeAnalysis
+actionSequence: [!action 'south', !action 'south', !action 'south', !action 'west',
+  !action 'west', !action 'west', !action 'west', !action 'west', !action 'south',
+  !action 'east', !action 'east', !action 'east', !action 'east', !action 'south',
+  !action 'east', !action 'north', !action 'north', !action 'north']
+rewardSequence: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+  0.0, 0.0, 0.0, 0.0, 1.0]
+stateSequence:
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unknown}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '6'}
+    - {attribute: direction, value: south}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unknown}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '5'}
+    - {attribute: direction, value: south}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '4'}
+    - {attribute: direction, value: south}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: south}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '5'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: west}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '4'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: west}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '3'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: west}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: west}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '1'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: west}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '1'}
+    - {attribute: y, value: '2'}
+    - {attribute: direction, value: south}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '3'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '2'}
+    - {attribute: y, value: '2'}
+    - {attribute: direction, value: east}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '4'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '3'}
+    - {attribute: y, value: '2'}
+    - {attribute: direction, value: east}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '5'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '4'}
+    - {attribute: y, value: '2'}
+    - {attribute: direction, value: east}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '5'}
+    - {attribute: y, value: '2'}
+    - {attribute: direction, value: east}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '5'}
+    - {attribute: y, value: '1'}
+    - {attribute: direction, value: south}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '2'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '1'}
+    - {attribute: direction, value: east}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '3'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '2'}
+    - {attribute: direction, value: north}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '4'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '3'}
+    - {attribute: direction, value: north}
+- !!burlap.oomdp.stateserialization.simple.SimpleSerializableState
+  objects:
+  - name: room0
+    object_class: room
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '0'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: red}
+  - name: room1
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '0'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '4'}
+    - {attribute: color, value: green}
+  - name: room2
+    object_class: room
+    values:
+    - {attribute: top, value: '8'}
+    - {attribute: left, value: '4'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '8'}
+    - {attribute: color, value: blue}
+  - name: door0
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '6'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '6'}
+    - {attribute: locked, value: unlocked}
+  - name: door1
+    object_class: door
+    values:
+    - {attribute: top, value: '4'}
+    - {attribute: left, value: '2'}
+    - {attribute: bottom, value: '4'}
+    - {attribute: right, value: '2'}
+    - {attribute: locked, value: unknown}
+  - name: block0
+    object_class: block
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '5'}
+    - {attribute: color, value: yellow}
+    - {attribute: shape, value: bag}
+  - name: agent0
+    object_class: agent
+    values:
+    - {attribute: x, value: '6'}
+    - {attribute: y, value: '4'}
+    - {attribute: direction, value: north}

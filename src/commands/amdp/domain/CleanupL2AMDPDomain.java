@@ -281,6 +281,23 @@ public class CleanupL2AMDPDomain implements DomainGenerator {
 		return new GoalConditionTF(sc);
 	}
 
+	public static class GroundedPropSC implements StateConditionTest{
+
+		public GroundedProp gp;
+
+		public GroundedPropSC(GroundedProp gp) {
+			this.gp = gp;
+		}
+
+		@Override
+		public boolean satisfies(State s) {
+			//			if(gp.isTrue(s)){
+			//				System.out.println("goal!!");
+			//			}
+			return gp.isTrue(s);
+		}
+	}
+
 
 	public static class DoorLockedSC implements StateConditionTest{
 
