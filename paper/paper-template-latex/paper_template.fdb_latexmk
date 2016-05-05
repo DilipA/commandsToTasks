@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex paper_template"] 1462472793 "paper_template.aux" "paper_template.bbl" "paper_template" 1462472795
+["bibtex paper_template"] 1462472793 "paper_template.aux" "paper_template.bbl" "paper_template" 1462484325
   "/usr/local/texlive/2014/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "paper_template.aux" 1462472794 2551 8adf4f04b0efebe82d9adfb36a7875ac ""
+  "paper_template.aux" 1462484325 2551 8adf4f04b0efebe82d9adfb36a7875ac ""
   "paper_template.bcf" 0 -1 0 ""
   "references.bib" 1462470571 1748 064fb398ed403d2f14ab2652cc17cae9 ""
   (generated)
-  "paper_template.blg"
   "paper_template.bbl"
-["pdflatex"] 1462472794 "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.tex" "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.pdf" "paper_template" 1462472795
-  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.aux" 1462472794 2551 8adf4f04b0efebe82d9adfb36a7875ac ""
-  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.tex" 1462472790 12038 db03cf5daf1e935cb9a2ad7a6d64808b ""
+  "paper_template.blg"
+["pdflatex"] 1462484324 "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.tex" "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.pdf" "paper_template" 1462484325
+  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.aux" 1462484325 2551 8adf4f04b0efebe82d9adfb36a7875ac ""
+  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.tex" 1462484323 12069 0b565d17bbaa9ab052e7488c7af2b6dd ""
   "/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -61,14 +61,14 @@
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1401025990 3832012 904d82bdcc8abf2b1cd296990b82553b ""
   "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
   "IEEEtran.cls" 1291620131 201353 775b18b42342447aea341b76a89fcb61 ""
-  "paper_template.aux" 1462472794 2551 8adf4f04b0efebe82d9adfb36a7875ac ""
+  "paper_template.aux" 1462484325 2551 8adf4f04b0efebe82d9adfb36a7875ac ""
   "paper_template.bbl" 1462472794 2239 91d529765b7a75f58d05c2e9a385b647 "bibtex paper_template"
-  "paper_template.out" 1462472794 383 ed422564a6a88da714b2ca910d6f4e4a ""
-  "paper_template.tex" 1462472790 12038 db03cf5daf1e935cb9a2ad7a6d64808b ""
+  "paper_template.out" 1462484325 383 ed422564a6a88da714b2ca910d6f4e4a ""
+  "paper_template.tex" 1462484323 12069 0b565d17bbaa9ab052e7488c7af2b6dd ""
   (generated)
-  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.log"
-  "paper_template.log"
-  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.pdf"
   "paper_template.aux"
   "paper_template.pdf"
+  "paper_template.log"
   "paper_template.out"
+  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.log"
+  "/Users/sidd/Projects/commandsToTasks/paper/paper-template-latex/paper_template.pdf"
