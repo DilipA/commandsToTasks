@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -23,6 +23,12 @@ Milos Hauskrecht, Nicolas Meuleau, Leslie~Pack Kaelbling, Thomas~L. Dean, and
 Nicholas~K. Jong, Todd Hester, and Peter Stone.
 \newblock The utility of temporal abstraction in reinforcement learning.
 \newblock In \emph{ATAL}, 2008.
+
+\bibitem[Junghanns and Schaeffer(2001)]{Junghanns2001SokobanEG}
+Andreas Junghanns and Jonathan Schaeffer.
+\newblock Sokoban: Enhancing general single-agent search methods using domain
+  knowledge.
+\newblock \emph{Artif. Intell.}, 129:\penalty0 219--251, 2001.
 
 \bibitem[Li et~al.(2006)Li, Walsh, and Littman]{Li2006TowardsAU}
 Lihong Li, Thomas~J. Walsh, and Michael~L. Littman.
