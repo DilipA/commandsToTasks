@@ -1,13 +1,11 @@
-This is BibTeX, Version 0.99d (TeX Live 2014)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper_template.aux
 The style file: plainnat.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "kalman1960new"
-Warning--I didn't find a database entry for "McGeer01041990"
 You've used 6 entries,
             2773 wiz_defined-function locations,
-            632 strings with 6050 characters,
+            629 strings with 6009 characters,
 and the built_in function-call counts, 3139 in all, are:
 = -- 237
 > -- 252
@@ -46,4 +44,3 @@ warning$ -- 0
 while$ -- 19
 width$ -- 0
 write$ -- 80
-(There were 2 warnings)
