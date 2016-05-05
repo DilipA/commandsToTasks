@@ -28,7 +28,7 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
 
     public static final String L0CROSSDATASET = "data/amdpData/L0L2/trajectory";
 
-    public static final String L2CROSSDATASET = "data/amdpData/L1L2/trajectory";
+    public static final String L1CROSSDATASET = "data/amdpData/L1L2/trajectory";
 
     public DomainGenerator domainGenerator;
     public Domain domain;
