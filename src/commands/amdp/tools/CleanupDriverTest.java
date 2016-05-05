@@ -8,15 +8,17 @@ import burlap.oomdp.auxiliary.common.GoalConditionTF;
 import burlap.oomdp.auxiliary.stateconditiontest.StateConditionTest;
 import burlap.oomdp.core.Domain;
 import burlap.oomdp.core.GroundedProp;
+import burlap.oomdp.core.PropositionalFunction;
 import burlap.oomdp.core.states.State;
 import burlap.oomdp.singleagent.RewardFunction;
 import burlap.oomdp.singleagent.common.GoalBasedRF;
 import burlap.oomdp.statehashing.SimpleHashableStateFactory;
-import commands.amdp.domain.CleanupDomainDriver;
-import commands.amdp.domain.CleanupL1AMDPDomain;
-import commands.amdp.domain.CleanupWorld;
-import commands.amdp.domain.PullCostGoalRF;
+import commands.amdp.domain.*;
 import commands.amdp.hardcoded.FixedDoorCleanupEnv;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Dilip Arumugam on 5/4/16.
@@ -36,7 +38,23 @@ public class CleanupDriverTest {
 
         State s = CleanupWorld.getExperimentState(domain);
 
-        GroundedProp groundedProp = new GroundedProp(domain.getPropFunction(CleanupWorld.PF_AGENT_IN_ROOM),  new String[]{"agent0", "room1"});
+        List<PropositionalFunction> pfs = new ArrayList<>();
+
+        pfs.add(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_DOOR));
+        pfs.add(domain.getPropFunction(CleanupWorld.PF_AGENT_IN_DOOR));
+
+        StringBuilder sb = new StringBuilder();
+        pfs.stream().map(PropositionalFunction::getName).forEach(n -> sb.append(n).append(" "));
+        String name = sb.toString().trim();
+        List<String> paramClasses = new ArrayList<>();
+        pfs.stream().map(PropositionalFunction::getParameterClasses).forEach(p -> Arrays.stream(p).forEach(paramClasses::add));
+        String[] parameterClasses = paramClasses.toArray(new String[paramClasses.size()]);
+
+
+//        GroundedProp groundedProp = new GroundedProp(new JointPF(name, domain, parameterClasses, pfs), new String[]{"block0", "door0", "agent0", "door1"});
+
+
+        GroundedProp groundedProp = new GroundedProp(domain.getPropFunction(CleanupWorld.PF_BLOCK_IN_DOOR),  new String[]{"block0", "door1"});
 
 
         StateConditionTest sc = new CleanupL1AMDPDomain.GroundedPropSC(groundedProp);
@@ -65,7 +83,7 @@ public class CleanupDriverTest {
         System.out.println(ea.stateSequence);
         System.out.println(ea.actionSequence);
         String prefix = "data/amdpData/L1L0/ea/";
-        ea.writeToFile(prefix + "go|to|red|door|go|into|red|room|move|bag|to|green|door|go|to|red|door" + "0");
+        ea.writeToFile(prefix + "go|to|red|door|go|to|red|room|move|bag|to|green|door" + "0");
 
         //		System.out.println(ea.getState(0).toString());
         System.out.println("total actions:" + ea.actionSequence.size());
