@@ -24,7 +24,7 @@ import java.util.Arrays;
  */
 public class EpisodeToTrajectory {
 
-    public static void parseEpisodes(File[] episodes, String outputDir) {
+    public static void parseEpisodes(File[] episodes, String outputDir, int level) {
         CleanupWorld cw = new CleanupWorld();
         cw.includeDirectionAttribute(true);
         cw.includePullAction(true);
@@ -55,33 +55,68 @@ public class EpisodeToTrajectory {
                 }
             }
             String naturalCommand = builder.toString();
-            EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domainL2);
-            Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
-            TrajectoryParser tp = new TrajectoryParser(domainL2, new CleanupL2Parser(domainL2));
 
-            String trajectoryRep = tp.getStringRepForTrajectory(trajectory);
+            if (level == 0) {
+                EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domain);
+                Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
+                TrajectoryParser tp = new TrajectoryParser(domain, new CleanupL0Parser(domain));
 
-            pathName = pathName.substring(0, pathName.length() - 9);
-            String fileName = outputDir + "/" + pathName + ".txt";
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileName)))) {
-                bw.write(naturalCommand);
-                bw.write("\n");
-                bw.write(trajectoryRep);
-            } catch (IOException e) {
-                e.printStackTrace();
+                String trajectoryRep = tp.getStringRepForTrajectory(trajectory);
+
+                pathName = pathName.substring(0, pathName.length() - 9);
+                String fileName = outputDir + "/" + pathName + ".txt";
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileName)))) {
+                    bw.write(naturalCommand);
+                    bw.write("\n");
+                    bw.write(trajectoryRep);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if (level == 1) {
+                EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domainL1);
+                Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
+                TrajectoryParser tp = new TrajectoryParser(domainL1, new CleanupL1Parser(domainL1));
+
+                String trajectoryRep = tp.getStringRepForTrajectory(trajectory);
+
+                pathName = pathName.substring(0, pathName.length() - 9);
+                String fileName = outputDir + "/" + pathName + ".txt";
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileName)))) {
+                    bw.write(naturalCommand);
+                    bw.write("\n");
+                    bw.write(trajectoryRep);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if (level == 2) {
+                EpisodeAnalysis ep = EpisodeAnalysis.parseFileIntoEA(f.getAbsolutePath(), domainL2);
+                Trajectory trajectory = new Trajectory(ep.stateSequence, ep.actionSequence);
+                TrajectoryParser tp = new TrajectoryParser(domainL2, new CleanupL2Parser(domainL2));
+
+                String trajectoryRep = tp.getStringRepForTrajectory(trajectory);
+
+                pathName = pathName.substring(0, pathName.length() - 9);
+                String fileName = outputDir + "/" + pathName + ".txt";
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(fileName)))) {
+                    bw.write(naturalCommand);
+                    bw.write("\n");
+                    bw.write(trajectoryRep);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
     public static void main(String[] args) {
-        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L2/ea";
-        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L2" +
+        String episodeDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1L0/ea";
+        String outputDirectory = "/Users/sidd/Projects/commandsToTasks/data/amdpData/L1L0" +
                 "/trajectory";
 
         File dir = new File(episodeDirectory);
         File[] episodes = dir.listFiles();
 
-        parseEpisodes(episodes, outputDirectory);
+        parseEpisodes(episodes, outputDirectory, 0);
 
     }
 }
