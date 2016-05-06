@@ -5,6 +5,26 @@ go to red door, go to blue room
 go to red door, go to red room, move bag to green door
 go to red door, go into red room, go to green door, go into green room
 go to red door, go into red room, move bag to green door, go to red door
-go to red door, go into red room, move bag to red door, go to red door
+go to red door, go into red room, move bag to red door, go to green door
 go to red door, go into red room, move bag to green door, move to green door, move bag to green room
 go to red door, go into red room, move bag to red door, move to red door, move bag to red room
+walk to the red door then walk into the red room
+walk to the red door then walk into the red room and then take the bag to the red door
+walk to the red door then walk into the red room and then walk to the green door
+walk to the red door then walk into the blue room
+walk to the red door then walk into the red room and then take the bag to the green door
+walk to the red door then walk into the red room then walk to the green door and then walk to the green room
+walk to the red door then walk into the red room then take the bag to the green door and then walk to the red door
+walk to the red door then walk into the red room then take the bag to the red door and then walk to the green door
+walk to the red door then walk into the red room then take the bag to the green door then walk to the green door and then move the bag to the green room
+walk to the red door then walk into the red room then take the bag to the red door then walk to the red door and then take the bag to the red room
+move through red door to the red room
+move through red door to the red room then carry the bag through red door
+move through red door to the red room then move through green door
+move through red door to the blue room
+move through red door to the red room then carry the bag through green door
+move through red door to the red room then move through green door to the green room
+move through red door to the red room then carry the bag through green door then move through red door
+move through red door to the red room then carry the bag through red door then move through green door
+move through red door to the red room then carry bag through green door then move through green door then carry bag to green room
+move through red door to the red room then carry bag through red door then move through red door then carry bag to red room

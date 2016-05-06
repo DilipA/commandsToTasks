@@ -1,0 +1,4 @@
+move through red door to the red room then carry the bag through red door then move through green door
+agentToRoom room0
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room0 agent,room0

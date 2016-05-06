@@ -1,0 +1,5 @@
+walk to the red door then walk into the red room then take the bag to the green door and then walk to the red door
+agentToRoom room0,blockToRoom block0 room1
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room0 agent,room0
+room,3 room,1 room,0 block,4,1,room1 agent,

@@ -1,0 +1,5 @@
+move through red door to the red room then move through green door to the green room
+agentToRoom room0,agentToRoom room1
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room0 agent,room0
+room,3 room,1 room,0 block,4,1,room0 agent,room1
