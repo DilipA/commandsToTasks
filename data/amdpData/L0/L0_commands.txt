@@ -2,9 +2,29 @@ move four steps south, four steps west
 move one step south, one step east
 move one step north
 move one step north, one step west
-go one step east, one step south, then two steps north
+move one step east, one step south, then two steps north
 move one step west
 move three steps south, one step east
 move three steps south, one step west
 move three steps south, one step north
 move one step north, two steps south
+go south for four steps, then west for four steps
+go south for one step, then east for one step
+go north for one step
+go north for one step, then west for one step
+go east for one step, then south for one step, then north for two steps
+go west for one step
+go south for three steps, then go east for one step
+go south for three steps, then go west for one step
+go south for three steps, then go north for one step
+go north for one step, then go south for two steps
+walk south four steps, then go west four steps
+walk south one step, then go east one step
+walk north one step
+walk north one step, then go west one step
+walk east one step, then go south one step, then go north two steps
+walk west one step
+walk south three steps, then go east one step
+walk south three steps, then go west one step
+walk south three steps, then go north one step
+walk north one step, then go south one step
