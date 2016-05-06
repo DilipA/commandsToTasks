@@ -1,0 +1,5 @@
+carry the bag to the blue room then walk to the green room
+blockToRoom block0 room2,agentToRoom room1
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room2 agent,
+room,3 room,1 room,0 block,4,1,room2 agent,room1

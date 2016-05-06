@@ -8,3 +8,23 @@ go to the red room
 move bag to green room
 move bag to blue room
 move bag to green room, then move bag to blue room
+carry the bag to the green room then walk to the red room
+carry the bag to the green room then walk to the green room
+carry the bag to the green room then walk to the blue room
+carry the bag to the blue room then walk to the red room
+carry the bag to the blue room then walk to the green room
+walk to the green room
+walk to the red room
+carry the bag to the green room
+carry the bag to the blue room
+carry the bag to the green room then carry the bag to the blue room
+take bag to green room then move to red room
+take bag to green room then move to green room
+take bag to green room then move to blue room
+take bag to blue room then move to red room
+take bag to blue room then move to green room
+move to green room
+move to red room
+take bag to green room
+take bag to blue room
+take bag to green room then take bag to blue room

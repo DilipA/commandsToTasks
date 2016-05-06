@@ -1,0 +1,5 @@
+take bag to green room then move to red room
+blockToRoom block0 room1,agentToRoom room0
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room1 agent,
+room,3 room,1 room,0 block,4,1,room1 agent,room0

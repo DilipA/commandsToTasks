@@ -1,0 +1,4 @@
+take bag to blue room
+blockToRoom block0 room2
+room,3 room,1 room,0 block,4,1,room0 agent,room2
+room,3 room,1 room,0 block,4,1,room2 agent,
