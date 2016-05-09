@@ -203,12 +203,12 @@ public class CleanupL0ControllerConstructor implements ControllerConstructor {
 
         labels.put("move|to|green|room.txt", "agentInRoom(agent0, room1)");
         labels.put("move|to|red|room.txt", "agentInRoom(agent0, room0)");
-        labels.put("take|bag|to|blue|room.txt", "blockInRoom(agent0, room2)");
+        labels.put("take|bag|to|blue|room.txt", "blockInRoom(block0, room2)");
         labels.put("take|bag|to|blue|room|then|move|to|green|room.txt",
                 "agentInRoom(agent0, room1) blockInRoom(block0, room2)");
         labels.put("take|bag|to|blue|room|then|move|to|red|room.txt",
                 "agentInRoom(agent0, room0) blockInRoom(block0, room2)");
-        labels.put("take|bag|to|green|room.txt", "blockInRoom(agent0, room1)");
+        labels.put("take|bag|to|green|room.txt", "blockInRoom(block0, room1)");
         labels.put("take|bag|to|green|room|then|move|to|blue|room.txt",
                 "agentInRoom(agent0, room2) blockInRoom(block0, room1)");
         labels.put("take|bag|to|green|room|then|move|to|green|room.txt",

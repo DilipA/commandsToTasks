@@ -208,12 +208,12 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
 
         labels.put("move|to|green|room.txt", "agentInRegion(agent0, room1)");
         labels.put("move|to|red|room.txt", "agentInRegion(agent0, room0)");
-        labels.put("take|bag|to|blue|room.txt", "blockInRegion(agent0, room2)");
+        labels.put("take|bag|to|blue|room.txt", "blockInRegion(block0, room2)");
         labels.put("take|bag|to|blue|room|then|move|to|green|room.txt",
                 "agentInRegion(agent0, room1) blockInRegion(block0, room2)");
         labels.put("take|bag|to|blue|room|then|move|to|red|room.txt",
                 "agentInRegion(agent0, room0) blockInRegion(block0, room2)");
-        labels.put("take|bag|to|green|room.txt", "blockInRegion(agent0, room1)");
+        labels.put("take|bag|to|green|room.txt", "blockInRegion(block0, room1)");
         labels.put("take|bag|to|green|room|then|move|to|blue|room.txt",
                 "agentInRegion(agent0, room2) blockInRegion(block0, room1)");
         labels.put("take|bag|to|green|room|then|move|to|green|room.txt",

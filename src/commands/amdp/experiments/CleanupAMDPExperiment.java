@@ -113,6 +113,7 @@ public class CleanupAMDPExperiment {
         /**
          * Initial experimental results (10 samples per dataset -- 9 datasets total)
          * In pairs, first argument refers to level and second argument refers to language
+         * NOTE: These results may be invalid since the RF label mappings were incorrect
          * L0 = 0.3
          * L1 = 0.0
          * L2 = 0.1
@@ -130,12 +131,12 @@ public class CleanupAMDPExperiment {
          * L0 = 0.367
          * L1 = 0.0357 (only 28 samples?)
          * L2 = 0.1
-         * L0-L1 =
-         * L0-L2 =
-         * L1-L0 =
-         * L1-L2 = 0.2
-         * L2-L0 =
-         * L2-L1 = 0.107 (only 28 samples?)
+         * L0-L1 = 0.107 (only 28 samples?)
+         * L0-L2 = 0.467
+         * L1-L0 = 0.0
+         * L1-L2 = 0.267
+         * L2-L0 = 0.4
+         * L2-L1 = 0.143 (only 28 samples?)
          */
 
 //        boolean cacheIRLResults = true;
@@ -156,8 +157,8 @@ public class CleanupAMDPExperiment {
 //        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE); //L1
 //        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE); //L2
 
-//        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
-        LOOTest(l0Controller, l0Controller.L2CROSSDATASET, L0_TRAJ_CACHE); //L0-L2
+        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
+//        LOOTest(l0Controller, l0Controller.L2CROSSDATASET, L0_TRAJ_CACHE); //L0-L2
 //
 //        LOOTest(l1Controller, l1Controller.L0CROSSDATASET, L1_TRAJ_CACHE); //L1-L0
 //        LOOTest(l1Controller, l1Controller.L2CROSSDATASET, L1_TRAJ_CACHE); //L1-L2
