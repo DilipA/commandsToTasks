@@ -81,6 +81,10 @@ public class CleanupAMDPExperiment {
             GenerativeModel gm = controller.getGM();
             TrainingElement queryElement = dataset.get(i);
             String rfLabel = rfLabels.get(queryElement.identifier);
+            if(rfLabel == null){
+                System.out.println(queryElement.identifier);
+                throw new RuntimeException("Encountered element of dataset without corresponding true RF label!");
+            }
             List<GMQueryResult> rfDist = controller.getRFDistribution(queryElement.trajectory.getState(0), queryElement.command);
             GMQueryResult predicted = GMQueryResult.maxProb(rfDist);
 
@@ -131,12 +135,12 @@ public class CleanupAMDPExperiment {
         if(cacheIRLResults) {
 //            cacheIRLResultsFor(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE);
 //            cacheIRLResultsFor(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE);
-//            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
+            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
         }
 
 //        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE); //L0
 //        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE); //L1
-//        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE); //L2
+        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE); //L2
 
 //        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
 //        LOOTest(l0Controller, l0Controller.L2CROSSDATASET, L0_TRAJ_CACHE); //L0-L2
@@ -145,6 +149,6 @@ public class CleanupAMDPExperiment {
 //        LOOTest(l1Controller, l1Controller.L2CROSSDATASET, L1_TRAJ_CACHE); //L1-L2
 
 //        LOOTest(l2Controller, l2Controller.L0CROSSDATASET, L2_TRAJ_CACHE); //L2-L0
-        LOOTest(l2Controller, l2Controller.L1CROSSDATASET, L2_TRAJ_CACHE); //L2-L1
+//        LOOTest(l2Controller, l2Controller.L1CROSSDATASET, L2_TRAJ_CACHE); //L2-L1
     }
 }
