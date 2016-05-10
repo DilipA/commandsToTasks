@@ -6,7 +6,10 @@ import commands.amdp.experiments.cleanupL2.CleanupL2ControllerConstructor;
 import commands.amdp.replicate.mt.IBM2;
 import commands.data.TrainingElement;
 import commands.model3.TaskModule;
+import commands.model3.mt.Tokenizer;
+import commands.model3.weaklysupervisedinterface.MTWeaklySupervisedModel;
 import commands.model3.weaklysupervisedinterface.WeaklySupervisedController;
+import commands.model3.weaklysupervisedinterface.WeaklySupervisedLanguageModel;
 import generativemodel.GMQueryResult;
 import generativemodel.GenerativeModel;
 
@@ -26,6 +29,11 @@ public class CleanupAMDPExperiment {
 
     public static void createAndAddLanguageModel(WeaklySupervisedController controller){
         IBM2 model = new IBM2();
+//        Tokenizer tokenizer = new Tokenizer(true, true);
+//        tokenizer.addDelimiter("-");
+//
+//        WeaklySupervisedLanguageModel model = new MTWeaklySupervisedModel(controller, tokenizer, 10);
+
         //set our controller to use the MT model we created
         controller.setLanguageModel(model);
     }
@@ -139,8 +147,8 @@ public class CleanupAMDPExperiment {
          * L2-L1 = 0.143 (only 28 samples?)
          */
 
-//        boolean cacheIRLResults = true;
-        boolean cacheIRLResults = false;
+        boolean cacheIRLResults = true;
+//        boolean cacheIRLResults = false;
 
         CleanupL0ControllerConstructor l0Controller = new CleanupL0ControllerConstructor();
         CleanupL1ControllerConstructor l1Controller = new CleanupL1ControllerConstructor();
@@ -153,11 +161,11 @@ public class CleanupAMDPExperiment {
 //            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
         }
 
-//        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE); //L0
+        LOOTest(l0Controller, l0Controller.EXPERTDATASET, "data/jerryTrajectoryCache"); //L0
 //        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE); //L1
 //        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE); //L2
 
-        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
+//        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
 //        LOOTest(l0Controller, l0Controller.L2CROSSDATASET, L0_TRAJ_CACHE); //L0-L2
 //
 //        LOOTest(l1Controller, l1Controller.L0CROSSDATASET, L1_TRAJ_CACHE); //L1-L0
