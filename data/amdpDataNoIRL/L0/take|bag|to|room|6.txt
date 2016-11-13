@@ -1,1 +1,7 @@
 Move down until you reach the wall of the red room and then move right until you reach exactly beneath the object and then go up until the object enters the green room .
+agentToDoor door0
+room,3,door1,door0
+room,1,door1 room,0,door0
+door,room2,room0
+door,room1,room0
+block,4,1,room0 agent,room2

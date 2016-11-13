@@ -1,1 +1,7 @@
 Retrieve the object in the pink room and place it in the green room before returning to the purple room .
+agentToDoor door0
+room,3,door1,door0
+room,1,door1 room,0,door0
+door,room2,room0
+door,room1,room0
+block,4,1,room0 agent,room2

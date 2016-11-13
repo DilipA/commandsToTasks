@@ -1,1 +1,7 @@
 Go to the door of the current room and enter the red room through this door to reach beneath the object there and go to the door situated on top of where you are now and then enter the green room through this door and then come out to the red room and go to the next door and enter the blur room .
+agentToDoor door0
+room,3,door1,door0
+room,1,door1 room,0,door0
+door,room2,room0
+door,room1,room0
+block,4,1,room0 agent,room2
