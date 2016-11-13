@@ -266,7 +266,7 @@ public class SokoMTExperiment {
 		List<TrainingElement> dataset = constructor.getTrainingDataset(pathToDataset);
 
 
-
+		System.out.println("Starting LOO loop...");
 		//start LOO loop
 		int nc = 0;
 		for(int i = 0; i < dataset.size(); i++){
@@ -276,18 +276,28 @@ public class SokoMTExperiment {
 
 			//get our controller
 			WeaklySupervisedController controller = constructor.generateNewController();
+			System.out.println("Got Controller");
+
 
 			//instantiate our MT language model
 			createAndAddLanguageModel(controller);
+			System.out.println("Added language model");
+
 
 			//load our IRL trajectory cache for fast IRL
 			controller.loadIRLProbabiltiesFromDisk(pathToIRLCache, constructor.cacheStateParser);
+			System.out.println("Loaded IRL probabilities from disk");
+
 
 			//instantiate the weakly supervised language model dataset using IRL
 			controller.createWeaklySupervisedTrainingDatasetFromTrajectoryDataset(trainingDataset);
+			System.out.println("Instantiated dataset");
+
 
 			//perform learning
 			controller.trainLanguageModel();
+			System.out.println("Trained language model");
+
 
 			//test it
 			GenerativeModel gm = controller.getGM();

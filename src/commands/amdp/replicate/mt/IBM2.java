@@ -196,8 +196,10 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
         for (int i = 0; i < this.burnInIterations; i++) {
             for (int j = 0; j < this.corpus.size(); j++) {
                 this.E(j);
+                //System.out.println("Finished E-step");
             }
             this.M();
+            //System.out.println("Finished M-step");
         }
         this.burnIn = true;
         for (int i = 0; i < iterations; i++) {
@@ -227,7 +229,7 @@ public class IBM2 implements WeaklySupervisedLanguageModel {
             for (int i = 1; i <= m; i++) {
                 for (int j = 0; j <= l; j++) {
                     double delta = this.point(natural, machine, i, j, m, l);
-                    delta *= weight;
+//                    delta *= weight;
 
                     String nWord = t(natural, i);
                     String sWord = t(machine, j);
