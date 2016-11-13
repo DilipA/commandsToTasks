@@ -1,0 +1,9 @@
+Go down four steps , west one step, down one step , west three steps , up three steps .
+Go down , Go west , Go down again , Go west again , Go up .
+Go down as far as you can , then go left as far as you can minus one step , then go up as far as you can .
+Go up
+Go down all the way, then left four , then up three .
+Go south through doorway , turn and go west to next doorway , go north through doorway .
+Move down until you reach the wall of the red room and then move right until you reach exactly beneath the object and then go up until the object enters the green room .
+Go South into the pink room . Go west to the object in the room . Take it and go north into the green room .
+Take four steps south , then one step west , then one step south , then three steps north .
