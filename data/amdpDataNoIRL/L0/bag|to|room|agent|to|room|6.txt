@@ -1,0 +1,1 @@
+Go down three steps , then left one step and down one step , then go left two steps , then down one step and left one step , then go up three steps , then down one , then right four steps , then up one step .

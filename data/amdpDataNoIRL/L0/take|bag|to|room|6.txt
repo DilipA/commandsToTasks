@@ -1,0 +1,1 @@
+Move down until you reach the wall of the red room and then move right until you reach exactly beneath the object and then go up until the object enters the green room .

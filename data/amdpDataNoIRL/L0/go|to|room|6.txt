@@ -1,0 +1,1 @@
+Go down three spots , left four spots and up two spots .

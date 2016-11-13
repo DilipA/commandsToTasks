@@ -1,0 +1,1 @@
+Go down , Turn right , go down , turn right , go up .

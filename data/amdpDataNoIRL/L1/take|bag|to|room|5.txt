@@ -1,0 +1,1 @@
+Go through doorway to pink room , follow wall to next doorway , and walk through doorway to green room .

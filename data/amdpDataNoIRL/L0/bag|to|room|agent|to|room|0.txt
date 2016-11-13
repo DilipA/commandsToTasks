@@ -1,0 +1,1 @@
+Go down , left , down , left , down , left , then up up up , then back down down and right right up .

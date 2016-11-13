@@ -1,0 +1,1 @@
+Go south three times , west four times , then north two times .

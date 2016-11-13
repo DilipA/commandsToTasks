@@ -1,0 +1,1 @@
+Go south through door , go west to next door , go north and into room .

@@ -1,0 +1,1 @@
+Go south three paces , then west one , then south one , then west two , south one , west one , then north three , then south one , then east four , then north two .

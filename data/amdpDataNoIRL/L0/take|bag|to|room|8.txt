@@ -1,0 +1,1 @@
+Take four steps south , then one step west , then one step south , then three steps north .

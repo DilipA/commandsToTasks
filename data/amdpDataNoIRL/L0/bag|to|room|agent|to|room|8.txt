@@ -1,0 +1,1 @@
+Move up , left , right and down .
