@@ -1,7 +1,3 @@
 Go south to the door , then go into the red room . Then go south four spaces , then west four spaces , then walk north four spaces to the door , then go south two spaces , east four spaces , then north to the door .
 agentToDoor door0
-room,3,door1,door0
-room,1,door1 room,0,door0
-door,room2,room0
-door,room1,room0
-block,4,1,room0 agent,room2
+room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room2
