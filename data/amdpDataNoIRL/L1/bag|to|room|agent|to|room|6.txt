@@ -1,3 +1,3 @@
 Go out the blue door and through the red door , then push the bag out the red door into the door of the green room , then go out the door into the red room and proceed through the blue room's door .
-agentToDoor door0
+agentToRoom room1
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room2

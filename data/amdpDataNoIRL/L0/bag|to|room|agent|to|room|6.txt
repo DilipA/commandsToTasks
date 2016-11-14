@@ -1,3 +1,3 @@
 Go down three steps , then left one step and down one step , then go left two steps , then down one step and left one step , then go up three steps , then down one , then right four steps , then up one step .
-agentToDoor door0
+west
 room,3,door1,door0 room,1,door1 room,0,door0 door,room2,room0 door,room1,room0 block,4,1,room0 agent,room2
