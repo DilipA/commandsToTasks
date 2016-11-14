@@ -26,6 +26,8 @@ import java.util.Map;
 public class CleanupL2ControllerConstructor implements ControllerConstructor {
     public static final String EXPERTDATASET = "data/amdpData/L2/trajectory";
 
+    public static final String NEWAMTDATASET = "data/amdpDataNoIRL/L2";
+
     public static final String L0CROSSDATASET = "data/amdpData/L0L2/trajectory";
 
     public static final String L1CROSSDATASET = "data/amdpData/L1L2/trajectory";
@@ -87,6 +89,20 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
     @Override
     public StateParser getCacheStateParser() {
         return this.cacheStateParser;
+    }
+
+    @Override
+    public Map<String, String> getNewAMTDatasetRFLabels(){
+        Map<String, String> labels = new HashMap<>();
+
+        //L0
+        for(int i=0;i < 12;i++){
+            labels.put("bag|to|room|agent|to|room|" + i + ".txt", "agentInRegion(agent0, room2) blockInRegion(block0, room1)");
+            labels.put("go|to|room|" + i + ".txt", "agentInRegion(agent0, room1)");
+            labels.put("take|bag|to|room|" + i + ".txt", "agentInRegion(agent0, door1) blockInRegion(block0, room1)");
+        }
+
+        return labels;
     }
 
     @Override

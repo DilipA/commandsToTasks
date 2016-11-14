@@ -334,7 +334,7 @@ public class WeaklySupervisedController {
 		}
 
 		//convert to array list for fast access
-		this.weaklySupervisedTrainingDataset = new ArrayList<WeaklySupervisedTrainingInstance>(wsd);
+		this.weaklySupervisedTrainingDataset = new ArrayList<>(wsd);
 
 
 	}

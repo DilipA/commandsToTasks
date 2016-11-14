@@ -30,6 +30,8 @@ public class CleanupL1ControllerConstructor implements ControllerConstructor{
 
     public static final String L2CROSSDATASET = "data/amdpData/L2L1/trajectory";
 
+    public static final String NEWAMTDATASET = "data/amdpDataNoIRL/L1";
+
     public DomainGenerator domainGenerator;
     public Domain domain;
     public HashableStateFactory hashingFactory;
@@ -98,6 +100,20 @@ public class CleanupL1ControllerConstructor implements ControllerConstructor{
     @Override
     public StateParser getCacheStateParser(){
         return this.cacheStateParser;
+    }
+
+    @Override
+    public Map<String, String> getNewAMTDatasetRFLabels(){
+        Map<String, String> labels = new HashMap<>();
+
+        //L0
+        for(int i=0;i < 12;i++){
+            labels.put("bag|to|room|agent|to|room|" + i + ".txt", "agentInRegion(agent0, room2) blockInRegion(block0, room1)");
+            labels.put("go|to|room|" + i + ".txt", "agentInRegion(agent0, room1)");
+            labels.put("take|bag|to|room|" + i + ".txt", "agentInRegion(agent0, door1) blockInRegion(block0, room1)");
+        }
+
+        return labels;
     }
 
     @Override

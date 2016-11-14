@@ -20,6 +20,8 @@ public interface ControllerConstructor {
 
     public List<TrainingElement> getTrainingDataset(String pathToDatasetDir);
 
+    public Map<String, String> getNewAMTDatasetRFLabels();
+
     public Map<String, String> getExpertDatasetRFLabels();
 
 //    public static Map<String, String> getExpertDatasetRFLabels(){

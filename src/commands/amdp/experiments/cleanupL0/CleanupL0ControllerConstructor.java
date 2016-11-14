@@ -25,6 +25,8 @@ import java.util.Map;
 public class CleanupL0ControllerConstructor implements ControllerConstructor {
     public static final String EXPERTDATASET = "data/amdpData/L0/trajectory";
 
+    public static final String NEWAMTDATASET = "data/amdpDataNoIRL/L0";
+
     public static final String L1CROSSDATASET = "data/amdpData/L1L0/trajectory";
 
     public static final String L2CROSSDATASET = "data/amdpData/L2L0/trajectory";
@@ -82,6 +84,12 @@ public class CleanupL0ControllerConstructor implements ControllerConstructor {
         TrainingElementParser teparser = new TrainingElementParser(this.domain, this.sp);
         List<TrainingElement> dataset = teparser.getTrainingElementDataset(pathToDatasetDir, ".txt");
         return dataset;
+    }
+
+    @Override
+    public Map<String, String> getNewAMTDatasetRFLabels(){
+        Map<String, String> labels = new HashMap<>();
+        return labels;
     }
 
     @Override

@@ -56,7 +56,9 @@ public class CleanupAMDPExperiment {
     }
 
     public static void LOOTest(ControllerConstructor constructor, String pathToDataset, String pathToIRLCache){
-        Map<String,String> rfLabels = constructor.getExpertDatasetRFLabels();
+//        Map<String,String> rfLabels = constructor.getExpertDatasetRFLabels();
+        Map<String,String> rfLabels = constructor.getNewAMTDatasetRFLabels();
+
 
         //get source training data
         List<TrainingElement> dataset = constructor.getTrainingDataset(pathToDataset);
@@ -77,7 +79,7 @@ public class CleanupAMDPExperiment {
             createAndAddLanguageModel(controller);
 
             //load our IRL trajectory cache for fast IRL
-			controller.loadIRLProbabiltiesFromDisk(pathToIRLCache, constructor.getCacheStateParser());
+//			controller.loadIRLProbabiltiesFromDisk(pathToIRLCache, constructor.getCacheStateParser());
 
             //instantiate the weakly supervised language model dataset using IRL
             controller.createWeaklySupervisedTrainingDatasetFromTrajectoryDataset(trainingDataset);
@@ -162,8 +164,8 @@ public class CleanupAMDPExperiment {
         }
 
 //        LOOTest(l0Controller, l0Controller.EXPERTDATASET, "data/jerryTrajectoryCache"); //L0
-        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE); //L1
-//        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE); //L2
+//        LOOTest(l1Controller, l1Controller.NEWAMTDATASET, L1_TRAJ_CACHE); //L1
+        LOOTest(l2Controller, l2Controller.NEWAMTDATASET, L2_TRAJ_CACHE); //L2
 
 //        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
 //        LOOTest(l0Controller, l0Controller.L2CROSSDATASET, L0_TRAJ_CACHE); //L0-L2

@@ -25,7 +25,7 @@ public class TrainingElementParser {
 	public TrainingElement getTrainingElementFromString(String sdata){
 		
 		int firstNewLineIndex = sdata.indexOf("\n");
-		String command = sdata.substring(0, firstNewLineIndex).trim();
+		String command = sdata.substring(0, firstNewLineIndex).trim().toLowerCase();
 		String trajectoryString = sdata.substring(firstNewLineIndex+1);
 		Trajectory t = tp.getTrajectoryFromString(trajectoryString);
 		
