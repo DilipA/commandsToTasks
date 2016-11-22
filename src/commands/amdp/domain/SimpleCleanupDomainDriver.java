@@ -108,7 +108,7 @@ public class SimpleCleanupDomainDriver {
 //			System.out.println(ea.getAction(i));
 //		}
 
-		Visualizer v = CleanupVisualizer.getVisualizer("amdp/data/resources/robotImages");
+		Visualizer v = CleanupVisualizer.getVisualizer("data/resources/robotImages");
 		new EpisodeSequenceVisualizer(v, domain, Arrays.asList(ea));
 
 	}

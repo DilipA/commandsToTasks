@@ -10,12 +10,11 @@ import commands.model3.mt.Tokenizer;
 import commands.model3.weaklysupervisedinterface.MTWeaklySupervisedModel;
 import commands.model3.weaklysupervisedinterface.WeaklySupervisedController;
 import commands.model3.weaklysupervisedinterface.WeaklySupervisedLanguageModel;
+import generativemodel.GMQuery;
 import generativemodel.GMQueryResult;
 import generativemodel.GenerativeModel;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Dilip Arumugam on 4/30/16.
@@ -57,7 +56,7 @@ public class CleanupAMDPExperiment {
 
     public static void LOOTest(ControllerConstructor constructor, String pathToDataset, String pathToIRLCache){
 //        Map<String,String> rfLabels = constructor.getExpertDatasetRFLabels();
-        Map<String,String> rfLabels = constructor.getNewAMTDatasetRFLabels();
+        Map<String,String> rfLabels = constructor.getExpertDatasetRFLabels();
 
 
         //get source training data
@@ -96,6 +95,19 @@ public class CleanupAMDPExperiment {
                 throw new RuntimeException("Encountered element of dataset without corresponding true RF label!");
             }
             List<GMQueryResult> rfDist = controller.getRFDistribution(queryElement.trajectory.getState(0), queryElement.command);
+            List<String> rfDistElts = new ArrayList<>();
+            for(GMQueryResult gmqr : rfDist){
+                rfDistElts.add(gmqr.getQueryForVariable(gm.getRVarWithName(TaskModule.GROUNDEDRFNAME)).toString() + " : " + gmqr.probability);
+            }
+            Collections.sort(rfDistElts, new Comparator<String>() {
+                @Override
+                public int compare(String s, String t1) {
+                    String[] s1Split = s.split(" : ");
+                    String[] s2Split = t1.split(" : ");
+                    return s2Split[1].compareTo(s1Split[1]);
+                }
+            });
+            System.out.println(rfDistElts);
             GMQueryResult predicted = GMQueryResult.maxProb(rfDist);
 
             TaskModule.RFConVariableValue gr = (TaskModule.RFConVariableValue)predicted.getQueryForVariable(gm.getRVarWithName(TaskModule.GROUNDEDRFNAME));
@@ -149,6 +161,20 @@ public class CleanupAMDPExperiment {
          * L2-L1 = 0.143 (only 28 samples?)
          */
 
+        /**
+         * No IRL probability results (30 samples per dataset -- 9 datasets total)
+         * In pairs, first argument refers to level and second argument refers to language
+         * L0 = 0.0
+         * L1 = 0.0
+         * L2 = 0.1
+         * L0-L1 = 0.0
+         * L0-L2 = 0.1
+         * L1-L0 = 0.0
+         * L1-L2 = 0.2
+         * L2-L0 = 0.4
+         * L2-L1 = 0.133
+         */
+
         boolean cacheIRLResults = true;
 //        boolean cacheIRLResults = false;
 
@@ -163,9 +189,9 @@ public class CleanupAMDPExperiment {
 //            cacheIRLResultsFor(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE);
         }
 
-//        LOOTest(l0Controller, l0Controller.EXPERTDATASET, "data/jerryTrajectoryCache"); //L0
-//        LOOTest(l1Controller, l1Controller.NEWAMTDATASET, L1_TRAJ_CACHE); //L1
-        LOOTest(l2Controller, l2Controller.NEWAMTDATASET, L2_TRAJ_CACHE); //L2
+//        LOOTest(l0Controller, l0Controller.EXPERTDATASET, L0_TRAJ_CACHE); //L0
+//        LOOTest(l1Controller, l1Controller.EXPERTDATASET, L1_TRAJ_CACHE); //L1
+        LOOTest(l2Controller, l2Controller.EXPERTDATASET, L2_TRAJ_CACHE); //L2
 
 //        LOOTest(l0Controller, l0Controller.L1CROSSDATASET, L0_TRAJ_CACHE); //L0-L1
 //        LOOTest(l0Controller, l0Controller.L2CROSSDATASET, L0_TRAJ_CACHE); //L0-L2

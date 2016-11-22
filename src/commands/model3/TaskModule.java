@@ -445,6 +445,8 @@ public class TaskModule extends GMModule {
 			}
 			
 			double uni = 1. / res.size();
+//			System.out.println("Possible # of LiftedRF Values: " + res.size());
+//			System.out.println("Probability assigned to LiftedRFs: " + uni);
 			for(GMQueryResult r : res){
 				r.probability = uni;
 			}

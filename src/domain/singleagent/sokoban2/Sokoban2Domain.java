@@ -251,7 +251,7 @@ public class Sokoban2Domain implements DomainGenerator {
 		setDoor(s, 1, 4, 2, 4, 2);
 		
 		setAgent(s, 6, 6);
-		setBlock(s, 0, 2, 2, "basket", "red");
+		setBlock(s, 0, 2, 2, "chair", "red");
 		
 		
 		return s;
@@ -737,7 +737,7 @@ public class Sokoban2Domain implements DomainGenerator {
 		s.addObject(b2);
 		setBlock(s, 1, 3, 2, "moon", "red");*/
 		
-		Visualizer v = Sokoban2Visualizer.getVisualizer("resources/robotImages");
+		Visualizer v = Sokoban2Visualizer.getVisualizer("data/resources/robotImages");
 		VisualExplorer exp = new VisualExplorer(domain, v, s);
 		
 		exp.addKeyAction("w", ACTIONNORTH);

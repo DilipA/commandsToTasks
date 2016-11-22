@@ -193,6 +193,8 @@ public class WeaklySupervisedController {
 		Iterator<GMQueryResult> lrIter = this.gm.getNonZeroIterator(this.gm.getRVarWithName(TaskModule.LIFTEDRFNAME), sconds, true);
 		while(lrIter.hasNext()){
 			GMQueryResult lrRes = lrIter.next();
+			System.out.println("LiftedRF: " + lrRes.getSingleQueryVar().toString());
+			System.out.println("LiftedRF probability: " + lrRes.probability);
 
 			List<RVariableValue> lrConds = new ArrayList<RVariableValue>(2);
 			lrConds.add(sval);
@@ -200,6 +202,8 @@ public class WeaklySupervisedController {
 			Iterator<GMQueryResult> grIter = this.gm.getNonZeroIterator(this.gm.getRVarWithName(TaskModule.GROUNDEDRFNAME), lrConds, true);
 			while(grIter.hasNext()){
 				GMQueryResult grRes = grIter.next();
+				System.out.println("\tGroundedRF: " + grRes.getSingleQueryVar().toString());
+				System.out.println("\tGroundedRF probability: " + grRes.probability);
 				double stackLRGR = lrRes.probability*grRes.probability;
 
 				List<RVariableValue> grConds = new ArrayList<RVariableValue>(3);
@@ -209,6 +213,8 @@ public class WeaklySupervisedController {
 				Iterator<GMQueryResult> bIter = this.gm.getNonZeroIterator(this.gm.getRVarWithName(TaskModule.BINDINGNAME), grConds, true);
 				while(bIter.hasNext()){
 					GMQueryResult bRes = bIter.next();
+					System.out.println("\t\tBindingConstraint: " + bRes.getSingleQueryVar().toString());
+					System.out.println("\t\tBindingConstraint probability: " + bRes.probability);
 					double stackLRGRB = stackLRGR * bRes.probability;
 
 
@@ -220,6 +226,8 @@ public class WeaklySupervisedController {
 							(TaskModule.LiftedVarValue)bRes.getSingleQueryVar());
 
 					double lp = this.languageModel.probabilityOfCommand(liftedTaskLE, bindingConstraintLE, naturalCommand);
+					System.out.println("\t\t\tLangmod probability: " + lp);
+					System.out.println("\n");
 					double p = lp * stackLRGRB;
 
 					////System.out.println(p + ": " + grRes.getSingleQueryVar().toString() + " " + bRes.getSingleQueryVar().toString());

@@ -50,12 +50,12 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
         this.liftedTaskDescriptions.add(atr);
 
         GPConjunction btr = new GPConjunction();
-        btr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_AGENT_IN_REGION), new String[]{"b", "r"}));
+        btr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_BLOCK_IN_REGION), new String[]{"b", "r"}));
         this.liftedTaskDescriptions.add(btr);
 
         GPConjunction abtr = new GPConjunction();
         abtr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_AGENT_IN_REGION), new String[]{"a", "r1"}));
-        abtr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_AGENT_IN_REGION), new String[]{"b", "r2"}));
+        abtr.addGP(new GroundedProp(domain.getPropFunction(CleanupL1AMDPDomain.PF_BLOCK_IN_REGION), new String[]{"b", "r2"}));
         this.liftedTaskDescriptions.add(abtr);
 
         this.sp = new CleanupL2Parser(this.domain);
@@ -187,6 +187,10 @@ public class CleanupL2ControllerConstructor implements ControllerConstructor {
                 "agentInRegion(agent0, room1) blockInRegion(block0, room0)");
         labels.put("walk|to|the|red|door|then|walk|into|the|red|room|then|walk|to|the|green|door|and|then|walk|to|the|green|room.txt",
                 "agentInRegion(agent0, room1)");
+        labels.put("walk|to|the|red|door|then|walk|into|the|red|room|then|take|the|bag|to|the|red|door|then|walk|to|the|red|door|and|then|take|the|bag|to|the|red|room.txt",
+                "blockInRegion(block0, room0)");
+        labels.put("walk|to|the|red|door|then|walk|into|the|red|room|then|take|the|bag|to|the|green|door|then|walk|to|the|green|door|and|then|move|the|bag|to|the|green|room.txt",
+                "blockInRegion(block0, room1)");
 
         //L2
         labels.put("carry|the|bag|to|the|blue|room.txt", "blockInRegion(block0, room2)");
